@@ -13,7 +13,7 @@ function Hero() {
     
     </p>
     <div className='absolute w-4/6'>
-    <p className='text-center text-lg leading-6 px-20'>
+    <p className='text-center text-lg leading-6 px-20 font-gilroy'>
     Personalize your shortened URLs to align with your brand identity. Utilize  custom slugs,
     branded links, and domain customization option to reinforce your brand presence and 
     enhance user engagement.

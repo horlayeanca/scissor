@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'gilroy': ['Gilroy', 'sans-serif'],
+        'gilroy-light': ['Gilroy-Light', 'sans-serif'],
       }
     },
   plugins: [],

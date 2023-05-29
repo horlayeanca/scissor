@@ -46,7 +46,7 @@ function Navigation() {
         {menuLinks.map(({ id, link }) => (
           <li
             key={id}
-            className="px-4 list-none capitalize font-gilroy font-light text-lg text-black cursor-pointer hover:scale-100 duration-300 hover:text-red-400"
+            className="px-4 list-none capitalize font-gilroy-light font-light text-lg text-black cursor-pointer hover:scale-100 duration-300 hover:text-red-400"
           >
           <Link to={link}>{link}</Link>
           </li>
