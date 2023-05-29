@@ -21,6 +21,10 @@ function Hero() {
     </div>
     
     </div>
+    <div className='flex justify-center items-center pt-36 gap-8'>
+    <span className='bg-blue-600 py-3 px-8 rounded-full font-gilroy text-white cursor-pointer'>Sign Up</span>
+    <button className='text-blue-600 cursor-pointer hover:scale-100 duration-200'>Learn more..</button>
+    </div>
     </div>
   )
 }
