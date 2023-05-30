@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faScissors, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -12,6 +12,7 @@ function Navigation() {
     {
       id: 1,
       link: "My URLs",
+      style: "cursor-pointer hover:text-blue-600",
     },
     {
       id: 2,
@@ -32,23 +33,30 @@ function Navigation() {
   ];
   return (
     <div className="flex justify-between items-center w-full h-20 px-20 gap-9">
-      <div>
-        <h1 className="text-2xl text-blue-600 font-extrabold cursor-pointer font-gilroy">
-          <FontAwesomeIcon
-            icon={faScissors}
-            size="2xs"
-            style={{ color: "#0065fe" }}
-          />{" "}
+      <div className="">
+        <h1 className="text-2xl flex justify-between items-center text-blue-600 font-bold cursor-pointer font-gilroy">
+          <svg
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M23.647 0.439381C23.0612 -0.14646 22.1031 -0.14646 21.5173 0.439381L18.4642 3.49483C17.2133 2.66275 15.7779 2.24971 14.3364 2.24971C12.4174 2.24971 10.4736 2.98219 9.03361 4.44691L4.53359 8.94716C1.96726 11.5106 1.65093 15.4747 3.57862 18.384L0.525808 21.4394C-0.0600349 22.0253 -0.0600349 22.9745 0.525808 23.5606C0.818849 23.8536 1.20261 24 1.58637 24C1.97038 24 2.3539 23.8536 2.64694 23.5606L5.69975 20.5051C6.95088 21.3372 8.39497 21.7502 9.83641 21.7502C11.7305 21.7502 13.6743 21.0178 15.1392 19.553L19.6306 15.053C22.197 12.4893 22.5133 8.52524 20.5853 5.61595L23.647 2.56051C24.2329 1.97466 24.2329 1.02522 23.647 0.439381ZM18.8276 9.74996C18.8276 10.9512 18.3589 12.0821 17.5095 12.9317L13.0181 17.4317C12.1656 18.2813 11.0129 18.75 9.83641 18.75C9.15673 18.75 8.50633 18.5832 7.90872 18.2988L10.1223 16.0605C10.7081 15.4747 10.7081 14.5255 10.1223 13.9394C9.56113 13.3536 8.61193 13.3536 8.02609 13.9394L5.78783 16.1777C5.50079 15.5829 5.33663 14.9325 5.33663 14.25C5.33663 13.0488 5.80535 11.9179 6.65496 11.0683L11.13 6.56828C11.9796 5.71867 13.1352 5.24995 14.3364 5.24995C15.0161 5.24995 15.6634 5.41675 16.2612 5.70115L13.9791 7.9862C13.3932 8.57204 13.3932 9.52124 13.9791 10.1073C14.2721 10.4004 14.6556 10.5468 15.0396 10.5468C15.4205 10.5468 15.8043 10.4004 16.0971 10.1073L18.3766 7.82228C18.6634 8.41676 18.8276 9.0674 18.8276 9.74996Z"
+              fill="#0065FE"
+            />
+          </svg>{" "}
           | scissor
         </h1>
       </div>
       <div className="hidden md:flex">
-        {menuLinks.map(({ id, link }) => (
+        {menuLinks.map(({ id, link, style }) => (
           <li
             key={id}
-            className="px-4 list-none capitalize font-gilroy-light font-light text-lg text-black cursor-pointer hover:scale-100 duration-300 hover:text-red-400"
+            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 ${style}`}
           >
-          <Link to={link}>{link}</Link>
+            <Link to={link}>{link}</Link>
           </li>
         ))}
       </div>
@@ -62,19 +70,9 @@ function Navigation() {
       </div>
       <div onClick={toggleMenu} className="pr-4 z-10 text-blue-600 md:hidden">
         {showMenu ? (
-          <FontAwesomeIcon
-            icon={faTimes}
-            size="xl"
-            
-            className="px-1"
-          />
+          <FontAwesomeIcon icon={faTimes} size="xl" className="px-1" />
         ) : (
-          <FontAwesomeIcon
-            icon={faBars}
-            size="xl"
-            
-            className="px-1"
-          />
+          <FontAwesomeIcon icon={faBars} size="xl" className="px-1" />
         )}
       </div>
 
