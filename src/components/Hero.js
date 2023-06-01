@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as Vector } from "../assets/Vector.svg";
 
 function Hero() {
   return (
@@ -42,6 +43,9 @@ function Hero() {
         <button className="text-blue-600 cursor-pointer hover:scale-100 duration-200 hover:text-red-600">
           Learn more..
         </button>
+      </div>
+      <div className="flex w-4/6 m-auto">
+        <Vector />
       </div>
     </div>
   );
