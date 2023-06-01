@@ -54,7 +54,7 @@ function Navigation() {
         {menuLinks.map(({ id, link, style }) => (
           <li
             key={id}
-            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 ${style}`}
+            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600 ${style}`}
           >
             <Link to={link}>{link}</Link>
           </li>
@@ -76,9 +76,9 @@ function Navigation() {
         )}
       </div>
 
-      <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen text-black">
-        {showMenu &&
-          menuLinks.map(({ id, link }) => (
+      {showMenu && (
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-full text-black">
+          {menuLinks.map(({ id, link }) => (
             <li
               key={id}
               onClick={toggleMenu}
@@ -87,19 +87,20 @@ function Navigation() {
               <Link to={link}>{link}</Link>
             </li>
           ))}
-        <div className="flex flex-col justify-center items-center gap-3 mt-4 bg-white w-full">
-          {showMenu && (
-            <button className="text-blue-600 text-base font-medium leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400">
-              Log in
-            </button>
-          )}
-          {showMenu && (
-            <button className="flex flex-row justify-center items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 duration-300 hover:text-blue-600 hover:bg-red-400">
-              Try for free
-            </button>
-          )}
-        </div>
-      </ul>
+          <div className="flex flex-col justify-center items-center gap-3 mt-4 bg-white w-full">
+            {showMenu && (
+              <button className="text-blue-600 text-base font-medium leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400">
+                Log in
+              </button>
+            )}
+            {showMenu && (
+              <button className="flex flex-row justify-center items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 duration-300 hover:text-blue-600 hover:bg-red-400">
+                Try for free
+              </button>
+            )}
+          </div>
+        </ul>
+      )}
     </div>
   );
 }
