@@ -51,6 +51,10 @@ function Hero() {
         <Vector className="relative left-16 h-60" />
         <Frame className="flex items-center pt-3 absolute left-1/3" />
       </div>
+      <div className="flex w-full">
+        <Rectangle className="w-full h-24" />
+        <Ellipse className="absolute flex justify-center items-center ml-48 mt-6" />
+      </div>
     </div>
   );
 }
