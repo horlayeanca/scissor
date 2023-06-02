@@ -1,5 +1,8 @@
 import React from "react";
 import { ReactComponent as Vector } from "../assets/Vector.svg";
+import { ReactComponent as Ellipse } from "../assets/Ellipse.svg";
+import { ReactComponent as Frame } from "../assets/Frame.svg";
+import { ReactComponent as Rectangle } from "../assets/Rectangle.svg";
 
 function Hero() {
   return (
@@ -44,8 +47,9 @@ function Hero() {
           Learn more..
         </button>
       </div>
-      <div className="flex w-4/6 m-auto">
-        <Vector />
+      <div className="flex w-4/6 m-auto my-6 py-3 pl-8">
+        <Vector className="relative left-16 h-60" />
+        <Frame className="flex items-center pt-3 absolute left-1/3" />
       </div>
     </div>
   );
