@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as Line } from "../assets/Line.svg";
 
 function Features() {
   return (
@@ -37,10 +38,13 @@ function Features() {
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <h1>Why choose Scissor</h1>
-          <p>
+      <div className="grid grid-cols-3 py-24 px-48 gap-12">
+        <div className="row-span-2">
+          <h1 className="text-3xl font-gilroy font-extrabold flex justify-between">
+            <Line className="inline-block" />
+            Why choose <span className="text-blue-600">Scissor</span>
+          </h1>
+          <p className="font-gilroy-light text-base font-medium">
             Scissor is the hub of everything that has to do with your link
             management. We shorten your URLs, allow you creating ones for your
             personal, event usage. Our swift QR code creation, management and
@@ -49,6 +53,7 @@ function Features() {
           </p>
         </div>
         <div>
+          <div></div>
           <h1 className="font-gilroy font-semibold text-3xl">URL Shortening</h1>
           <p className="font-gilroy font-semibold text-base">
             Scissor allows yo to shorten URLs of your business, events. Shorten
