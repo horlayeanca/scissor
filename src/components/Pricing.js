@@ -166,6 +166,14 @@ function Pricing() {
           </ul>
         </div>
       </div>
+      <div className="flex justify-center items-center gap-3 pb-8">
+        <button className="text-blue-600 bg-white border-2 border-blue-300 font-gilroy font-bold text-sm px-10 py-2 rounded-full mt-16 hover:bg-gradient-to-br from-blue-600 to-green-400 duration-200 hover:text-white">
+          Get Custom Pricing
+        </button>
+        <button className="bg-blue-600 border-2 border-blue-600 text-white font-gilroy font-bold text-sm px-10 py-2 rounded-full mt-16 hover:bg-gradient-to-br from-green-300 to-blue-400 duration-200 hover:text-white">
+          Select Pricing
+        </button>
+      </div>
     </div>
   );
 }
