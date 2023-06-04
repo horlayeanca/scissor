@@ -1,5 +1,10 @@
 import React from "react";
 import { ReactComponent as Line } from "../assets/Line.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faQrcode } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 function Features() {
   return (
@@ -53,22 +58,40 @@ function Features() {
           </p>
         </div>
         <div>
-          <div></div>
-          <h1 className="font-gilroy font-semibold text-3xl">URL Shortening</h1>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+            <FontAwesomeIcon
+              icon={faLink}
+              size="lg"
+              className="text-slate-800"
+            />
+          </div>
+          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+            URL Shortening
+          </h1>
           <p className="font-gilroy font-semibold text-base">
             Scissor allows yo to shorten URLs of your business, events. Shorten
             your URL at scale, URL redirects.
           </p>
         </div>
         <div>
-          <h1 className="font-gilroy font-semibold text-3xl">Custom URLs</h1>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+            <FontAwesomeIcon icon={faPenToSquare} />
+          </div>
+          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+            Custom URLs
+          </h1>
           <p className="font-gilroy font-semibold text-base">
             With Scissor, you can create custom URLs, with the length you want!
             A solution for socials and businesses.
           </p>
         </div>
         <div>
-          <h1 className="font-gilroy font-semibold text-3xl">QR Codes</h1>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+            <FontAwesomeIcon icon={faQrcode} />
+          </div>
+          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+            QR Codes
+          </h1>
           <p className="font-gilroy font-semibold text-base">
             Generate QR codes for your business, events, and more. Bring your
             audience and customers to your doorstep with this scan and go
@@ -76,7 +99,12 @@ function Features() {
           </p>
         </div>
         <div>
-          <h1 className="font-gilroy font-semibold text-3xl">Data Analytics</h1>
+          <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
+            <FontAwesomeIcon icon={faChartLine} />
+          </div>
+          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+            Data Analytics
+          </h1>
           <p className="font-gilroy font-semibold text-base">
             Receive data on the usage of either your shortened URLs, custom URLs
             or generated QR codes. Embedded to monitor progress.
