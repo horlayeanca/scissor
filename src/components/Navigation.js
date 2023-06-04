@@ -61,10 +61,10 @@ function Navigation() {
         ))}
       </div>
       <div className="md:flex justify-center items-center gap-3 hidden">
-        <button className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400">
+        <button className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-blue-300">
           Log in
         </button>
-        <button className="flex flex-row justify-center cursor-pointer items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 duration-300 hover:text-blue-600 hover:bg-red-400">
+        <button className="flex flex-row justify-center cursor-pointer items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 hover:bg-gradient-to-br from-blue-600 to-green-400 duration-200">
           Try for free
         </button>
       </div>
