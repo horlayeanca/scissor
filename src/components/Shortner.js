@@ -14,16 +14,19 @@ function Shortner() {
             className="border-2 border-blue-200 rounded-xl w-96 px-4 py-2 font-gilroy focus:outline-blue-400"
           />
           <div className="flex gap-2">
-            <button
+            <select
               type="select"
-              className="border-2 border-blue-200 px-4 py-2 rounded-xl font-gilroy text-sm text-blue-400"
+              className="border-2 border-blue-200 px-4 py-2 rounded-xl font-gilroy text-sm text-blue-400 focus:outline-blue-400"
             >
-              Customize domain &nbsp;
+              <option value="Customize">Customize domain</option>
+              <option value="Customize">Customize domain</option>
+              <option value="Customize">Customize domain</option>
+              Customize domain
               <FontAwesomeIcon
                 icon={faChevronDown}
                 style={{ color: "#3284ff" }}
               />
-            </button>
+            </select>
             <input
               type="text"
               placeholder="Type Alias here"

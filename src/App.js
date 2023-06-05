@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Shortner from "./components/Shortner";
 import Pricing from "./components/Pricing";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Features />
         <Pricing />
         <Shortner />
+        <Faq />
       </div>
     </Router>
   );
