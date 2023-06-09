@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Shortner from "./components/Shortner";
 import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
+import GetStarted from "./components/GetStarted";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Pricing />
         <Shortner />
         <Faq />
+        <GetStarted />
       </div>
     </Router>
   );

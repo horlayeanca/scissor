@@ -5,7 +5,7 @@ import { faHandScissors } from "@fortawesome/free-solid-svg-icons";
 
 function Shortner() {
   return (
-    <div className="flex justify-center items-center bg-gradient-to-br from-secondary to-blue-800 py-20">
+    <div className="flex justify-center items-center bg-secondary py-20">
       <div className="border-2 rounded-xl flex flex-col justify-center items-center p-11 gap-5 w-1/3 bg-white">
         <form action="" className="flex flex-col gap-4">
           <input
