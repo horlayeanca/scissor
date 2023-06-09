@@ -85,7 +85,7 @@ function Faq() {
         {faqs.map((faq, index) => (
           <ListItem key={index} {...faq} />
         ))}
-        <div className="absolute -right-10 py-8">
+        <div className="absolute -right-10 py-7">
           <VectorIV className="absolute hidden md:block -right-5" />
           <VectorV className="absolute hidden md:block -right-6" />
           <VectorVII className="absolute hidden md:block right-3" />
