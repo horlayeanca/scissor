@@ -13,7 +13,7 @@ function Features() {
         <div className="flex flex-row justify-center items-center py-16">
           <div>
             <div className="px-6">
-              <h1 className="font-gilroy text-4xl font-medium">
+              <h1 className="font-gilroy-light text-4xl font-semibold">
                 One Stop. <br /> Four{" "}
                 <span className="text-blue-600">Possibilites.</span>
               </h1>
@@ -21,7 +21,7 @@ function Features() {
           </div>
           <div className="flex flex-row gap-12 px-10">
             <div>
-              <h1 className="text-3xl font-gilroy">3M</h1>
+              <h1 className="text-3xl font-gilroy-light font-medium">3M</h1>
               <p className="font-semibld font-gilroy">Active users</p>
             </div>
             <div className="">
@@ -45,7 +45,7 @@ function Features() {
       </div>
       <div className="grid grid-cols-3 py-24 px-48 gap-12">
         <div className="row-span-2">
-          <h1 className="text-3xl font-gilroy font-extrabold flex justify-between">
+          <h1 className="text-3xl font-gilroy-light font-semibold flex justify-between">
             <Line className="inline-block" />
             Why choose <span className="text-blue-600">Scissor</span>
           </h1>

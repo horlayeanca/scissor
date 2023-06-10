@@ -14,7 +14,7 @@ function GetStarted() {
         <VectorIX className="absolute -left-2" />
         <VectorX className="absolute -left-1" />
         <div className="flex justify-center items-center flex-col h-96">
-          <h1 className="font-gilroy text-4xl font-bold text-white pb-10">
+          <h1 className="font-gilroy-light text-4xl font-semibold text-white pb-10">
             Revolutionizing Link Optimization
           </h1>
           <button className="bg-primary py-3 px-10 rounded-full text-white font-gilroy font-normal text-base hover:bg-gradient-to-br from-green-300 to-blue-400 duration-300 hover:text-black ">

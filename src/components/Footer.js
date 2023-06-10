@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className="pt-20 pb-10">
       <div className="px-5">
-        <div className="grid grid-cols-5 gap-10 px-28 justify-center border-2 border-blue-400">
+        <div className="grid grid-cols-5 gap-x-10 gap-y-0 px-28 justify-center">
           <div className="row-span-2 px-6">
             <div className="flex pt-2">
               <Logo className="flex items-baseline" />{" "}
@@ -113,6 +113,11 @@ function Footer() {
               <li>Code of Conduct</li>
             </ul>
           </div>
+        </div>
+        <div className="text-right pr-20">
+          <h3 className="font-gilroy text-base font-medium">
+            Term of Service | Security | Scissor 2023
+          </h3>
         </div>
       </div>
     </div>
