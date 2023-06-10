@@ -7,6 +7,7 @@ import Shortner from "./components/Shortner";
 import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import GetStarted from "./components/GetStarted";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Shortner />
         <Faq />
         <GetStarted />
+        <Footer />
       </div>
     </Router>
   );
