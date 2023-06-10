@@ -9,7 +9,7 @@ function Hero() {
     <div>
       <div className="flex flex-col w-full h-60 px-5 justify-center items-center ">
         <div className="h-10">
-          <p className="max-w-4xl text-5xl text-center leading-relaxed font-gilroy font-extrabold">
+          <p className="max-w-4xl text-5xl text-center leading-relaxed font-gilroy-light font-bold">
             Optimize Your Online Experience with Our Advanced{" "}
             <span className="text-blue-600 leading-3">URL Shortening </span>{" "}
             Solution

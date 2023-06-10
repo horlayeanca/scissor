@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         gilroy: ["Gilroy", "sans-serif"],
-        "gilroy-light": ["Gilroy-Light", "sans-serif"],
+        gil: ["Gilroy-Light", "sans-serif"],
       },
       colors: {
         white: "#F9FBFD",

@@ -21,23 +21,25 @@ function Features() {
           </div>
           <div className="flex flex-row gap-12 px-10">
             <div>
-              <h1 className="text-3xl font-gilroy-light font-medium">3M</h1>
+              <h1 className="text-3xl font-gilroy-light font-semibold">3M</h1>
               <p className="font-semibld font-gilroy">Active users</p>
             </div>
             <div className="">
-              <h1 className="text-3xl font-gilroy">60M</h1>
+              <h1 className="text-3xl font-gilroy-light font-semibold">60M</h1>
               <p className="font-semibld font-gilroy">
                 Links & QR <br /> codes created
               </p>
             </div>
             <div className="">
-              <h1 className="text-3xl font-gilroy">1B</h1>
+              <h1 className="text-3xl font-gilroy-light font-semibold">1B</h1>
               <p className="font-semibld font-gilroy">
                 Clicked & Scanned <br /> connections
               </p>
             </div>
             <div className="">
-              <h1 className="text-3xl font-gilroy px-4">300K</h1>
+              <h1 className="text-3xl font-gilroy-light font-semibold px-4">
+                300K
+              </h1>
               <p className="font-light font-gilroy px-4">App Integrations</p>
             </div>
           </div>
