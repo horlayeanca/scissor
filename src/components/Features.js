@@ -47,11 +47,11 @@ function Features() {
       </div>
       <div className="grid grid-cols-3 py-24 px-48 gap-12">
         <div className="row-span-2">
-          <h1 className="text-3xl font-gilroy-light font-semibold flex justify-between">
+          <h1 className="text-3xl font-gil font-semibold flex justify-between">
             <Line className="inline-block" />
             Why choose <span className="text-blue-600">Scissor</span>
           </h1>
-          <p className="font-gilroy-light text-base font-medium">
+          <p className="font-gilroy text-base font-medium">
             Scissor is the hub of everything that has to do with your link
             management. We shorten your URLs, allow you creating ones for your
             personal, event usage. Our swift QR code creation, management and

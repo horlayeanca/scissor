@@ -32,7 +32,7 @@ function Navigation() {
     },
   ];
   return (
-    <div className="flex justify-between items-center w-full h-20 px-20 gap-9">
+    <div className="flex justify-between items-center w-full h-20 px-20 gap-9 bg-yellow-50">
       <div className="">
         <h1 className="text-2xl flex justify-between items-center text-blue-600 font-bold cursor-pointer font-gilroy">
           <svg

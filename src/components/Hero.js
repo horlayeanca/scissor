@@ -6,8 +6,8 @@ import { ReactComponent as Rectangle } from "../assets/Rectangle.svg";
 
 function Hero() {
   return (
-    <div>
-      <div className="flex flex-col w-full h-60 px-5 justify-center items-center ">
+    <div className="bg-gradient-to-b from-yellow-50 to-slate-200">
+      <div className="flex flex-col w-full h-60 px-5 justify-center items-center">
         <div className="h-10">
           <p className="max-w-4xl text-5xl text-center leading-relaxed font-gilroy-light font-bold">
             Optimize Your Online Experience with Our Advanced{" "}
