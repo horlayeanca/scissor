@@ -31,8 +31,8 @@ function Shortner() {
               className="border-2 border-blue-200 px-4 py-2 rounded-xl font-gilroy text-sm text-blue-400 focus:outline-blue-400"
             >
               <option value="Customize">Customize domain</option>
-              <option value="Customize">Customize domain</option>
-              <option value="Customize">Customize domain</option>
+              <option value="Customize">Scissor.com</option>
+              <option value="Customize">Enter domain</option>
               Customize domain
               <FontAwesomeIcon
                 icon={faChevronDown}
