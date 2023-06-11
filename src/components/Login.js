@@ -2,6 +2,9 @@ import React from "react";
 import { ReactComponent as Apple } from "../assets/Apple.svg";
 import { ReactComponent as Google } from "../assets/Google.svg";
 import { ReactComponent as VectorXX } from "../assets/VectorXX.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function Login() {
   return (
@@ -36,6 +39,8 @@ function Login() {
             placeholder="Password"
             className="border-2 border-blue-600 rounded-lg w-[450px] py-2 px-4"
           />
+          <FontAwesomeIcon icon={faEyeSlash} />
+          <FontAwesomeIcon icon={faEye} />
           <h2>Forgot password ?</h2>
           <button className="bg-blue-600 py-2 rounded-full">Log in</button>
           <h2>
