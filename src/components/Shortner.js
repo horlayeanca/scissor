@@ -2,10 +2,22 @@ import React from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandScissors } from "@fortawesome/free-solid-svg-icons";
+import { ReactComponent as VectorIV } from "../assets/VectorIV.svg";
+import { ReactComponent as VectorV } from "../assets/VectorV.svg";
+import { ReactComponent as VectorVII } from "../assets/VectorVII.svg";
+import { ReactComponent as VectorVIII } from "../assets/VectorVIII.svg";
+import { ReactComponent as VectorIX } from "../assets/VectorIX.svg";
+import { ReactComponent as VectorX } from "../assets/VectorX.svg";
 
 function Shortner() {
   return (
     <div className="flex justify-center items-center bg-secondary py-20">
+      <VectorVIII className="absolute left-0 -mt-[194px]" />
+      <VectorIX className="absolute left-0 -mt-[230px]" />
+      <VectorX className="absolute left-0 -mt-[273px]" />
+      <VectorIV className="absolute right-0 mt-[152px]" />
+      <VectorV className="absolute right-0 mt-[134px]" />
+      <VectorVII className="absolute right-0 mt-[80px]" />
       <div className="border-2 rounded-xl flex flex-col justify-center items-center p-11 gap-5 w-1/3 bg-white">
         <form action="" className="flex flex-col gap-4">
           <input
