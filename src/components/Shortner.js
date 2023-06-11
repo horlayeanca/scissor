@@ -33,7 +33,7 @@ function Shortner() {
               className="border-2 border-blue-200 px-3 py-2 rounded-xl font-gilroy focus:outline-blue-400"
             />
           </div>
-          <button className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-gradient-to-br from-green-300 to-blue-400 duration-200">
+          <button className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200">
             Trim URL &nbsp;{" "}
             <FontAwesomeIcon
               icon={faHandScissors}
