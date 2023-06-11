@@ -3,10 +3,19 @@ import { ReactComponent as Logo } from "../assets/Logo.svg";
 import { ReactComponent as Facebook } from "../assets/Facebook.svg";
 import { ReactComponent as Twitter } from "../assets/Twitter.svg";
 import { ReactComponent as Linkedin } from "../assets/Linkedin.svg";
+import { ReactComponent as VectorXIV } from "../assets/VectorXIV.svg";
+import { ReactComponent as VectorXV } from "../assets/VectorXV.svg";
+import { ReactComponent as VectorXVI } from "../assets/VectorXVI.svg";
+import { ReactComponent as VectorXVII } from "../assets/VectorXVII.svg";
+import { ReactComponent as VectorXVIII } from "../assets/VectorXVIII.svg";
+import { ReactComponent as VectorXIX } from "../assets/VectorXIX.svg";
 
 function Footer() {
   return (
     <div className="pt-20 pb-10">
+      <VectorXIV className="absolute left-0 mt-[205px]" />
+      <VectorXV className="absolute left-0 mt-[130px]" />
+      <VectorXVI className="absolute left-0 mt-[20px]" />
       <div className="px-5">
         <div className="grid grid-cols-5 gap-x-10 gap-y-0 px-28 justify-center">
           <div className="row-span-2 px-6">
