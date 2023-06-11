@@ -86,6 +86,9 @@ function Faq() {
           <ListItem key={index} {...faq} />
         ))}
       </ul>
+      <VectorIV className="absolute hidden md:block -mt-60 right-1" />
+      <VectorV className="absolute hidden md:block -mt-[260px] right-1" />
+      <VectorVII className="absolute hidden md:block -mt-[317px] right-1" />
     </div>
   );
 }
