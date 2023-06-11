@@ -41,14 +41,21 @@ function Login() {
           />
           <FontAwesomeIcon icon={faEyeSlash} />
           <FontAwesomeIcon icon={faEye} />
-          <h2>Forgot password ?</h2>
-          <button className="bg-blue-600 py-2 rounded-full">Log in</button>
-          <h2>
-            Don't have an account? <a href="/#">Sign up</a>
+          <h2 className="font-gilroy text-right">Forgot password ?</h2>
+          <button className="bg-blue-600 py-2 rounded-full font-gilroy">
+            Log in
+          </button>
+          <h2 className="font-gilroy">
+            Don't have an account?{" "}
+            <a href="/#" className="text-blue-600">
+              Sign up
+            </a>
           </h2>
           <div>
-            <h3>By signing in with an account, you agree to</h3>
-            <h2>
+            <h3 className="font-gilroy">
+              By signing in with an account, you agree to
+            </h3>
+            <h2 className="font-gilroy">
               Scissor's Terms of Service, Privacy Policy and Acceptable Use
               Policy.
             </h2>
