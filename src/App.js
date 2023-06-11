@@ -8,18 +8,20 @@ import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import GetStarted from "./components/GetStarted";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
 
 function App() {
   return (
     <Router>
       <div>
-        <Navigation />
+        {/* <Navigation />}
         <Hero />
         <Features />
         <Pricing />
         <Shortner />
         <Faq />
-        <GetStarted />
+  <GetStarted /> */}
+        <Login />
         <Footer />
       </div>
     </Router>
