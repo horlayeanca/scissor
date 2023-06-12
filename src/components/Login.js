@@ -9,7 +9,7 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 function Login() {
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">
-      <div className="flex justify-center items-center flex-col border-2 border-black w-1/2">
+      <div className="flex justify-center items-center flex-col w-1/2">
         <h3>Log in with:</h3>
         <div className="flex items-center font-gilroy text-white py-3">
           <button className="bg-blue-600 py-2 px-5 flex items-center rounded">
