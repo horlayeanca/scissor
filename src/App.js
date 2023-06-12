@@ -9,6 +9,7 @@ import Faq from "./components/Faq";
 import GetStarted from "./components/GetStarted";
 import Footer from "./components/Footer";
 import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
@@ -20,8 +21,10 @@ function App() {
         <Pricing />
         <Shortner />
         <Faq />
-  <GetStarted /> */}
-        <Login />
+  <GetStarted />
+<Login /> */}
+
+        <SignUp />
         <Footer />
       </div>
     </Router>
