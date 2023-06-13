@@ -18,7 +18,7 @@ function SignUp() {
             <Google className="w-4 h-4 flex" /> &nbsp; Google
           </button>
           <button className="bg-blue-600 py-2 px-5 font-gilroy text-sm text-white flex items-center rounded ml-4">
-            <Apple className="w-4 h-4 flex" />
+            <Apple className="w-4 h-4 flex text-white" />
             &nbsp; Apple
           </button>
         </div>

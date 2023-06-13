@@ -12,7 +12,6 @@ function Navigation() {
     {
       id: 1,
       link: "My URLs",
-      style: "cursor-pointer hover:text-blue-600",
     },
     {
       id: 2,
@@ -32,8 +31,8 @@ function Navigation() {
     },
   ];
   return (
-    <div className="flex justify-between items-center w-full h-20 px-20 gap-9 bg-yellow-50">
-      <div className="">
+    <div className="flex justify-between items-center w-full h-20 px-20 gap-9 bg-yellow-50 bg-blend-lighten">
+      <Link to="/" className="">
         <h1 className="text-2xl flex justify-between items-center text-blue-600 font-bold cursor-pointer font-gilroy">
           <svg
             width="25"
@@ -49,24 +48,27 @@ function Navigation() {
           </svg>{" "}
           | scissor
         </h1>
-      </div>
+      </Link>
       <div className="hidden md:flex">
-        {menuLinks.map(({ id, link, style }) => (
+        {menuLinks.map(({ id, link }) => (
           <li
             key={id}
-            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600 ${style}`}
+            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600`}
           >
             <Link to={link}>{link}</Link>
           </li>
         ))}
       </div>
       <div className="md:flex justify-center items-center gap-3 hidden">
-        <button className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-blue-300">
+        <Link
+          to="/login"
+          className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-blue-300"
+        >
           Log in
-        </button>
-        <button className="flex flex-row justify-center cursor-pointer items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 hover:bg-gradient-to-br from-blue-600 to-green-400 duration-200">
+        </Link>
+        <Link className="flex flex-row justify-center cursor-pointer items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 hover:bg-gradient-to-br from-blue-600 to-green-400 duration-200">
           Try for free
-        </button>
+        </Link>
       </div>
       <div onClick={toggleMenu} className="pr-4 z-10 text-blue-600 md:hidden">
         {showMenu ? (
@@ -89,9 +91,12 @@ function Navigation() {
           ))}
           <div className="flex flex-col justify-center items-center gap-3 mt-4 bg-white w-full">
             {showMenu && (
-              <button className="text-blue-600 text-base font-medium leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400">
+              <a
+                href="/login"
+                className="text-blue-600 text-base font-medium leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400"
+              >
                 Log in
-              </button>
+              </a>
             )}
             {showMenu && (
               <button className="flex flex-row justify-center items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 duration-300 hover:text-blue-600 hover:bg-red-400">

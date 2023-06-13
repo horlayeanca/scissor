@@ -3,10 +3,11 @@ import { ReactComponent as Vector } from "../assets/Vector.svg";
 import { ReactComponent as Ellipse } from "../assets/Ellipse.svg";
 import { ReactComponent as Frame } from "../assets/Frame.svg";
 import { ReactComponent as Rectangle } from "../assets/Rectangle.svg";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="bg-gradient-to-b from-yellow-50 to-slate-200">
+    <div className="bg-gradient-to-b from-yellow-50 to-slate-200 bg-blend-multiply">
       <div className="flex flex-col w-full h-60 px-5 justify-center items-center">
         <div className="h-10">
           <p className="max-w-4xl text-5xl text-center leading-relaxed font-gilroy-light font-bold">
@@ -40,9 +41,12 @@ function Hero() {
         </div>
       </div>
       <div className="flex justify-center items-center pt-36 gap-8">
-        <span className="bg-blue-600 py-3 px-8 rounded-full font-gilroy text-white cursor-pointer hover:bg-red-400 duration-200">
+        <Link
+          to="/signup"
+          className="bg-blue-600 py-3 px-8 rounded-full font-gilroy text-white cursor-pointer hover:bg-blue-500 duration-200"
+        >
           Sign Up
-        </span>
+        </Link>
         <button className="text-blue-600 cursor-pointer hover:scale-100 duration-200 hover:text-red-600">
           Learn more..
         </button>
