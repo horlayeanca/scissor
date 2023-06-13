@@ -33,6 +33,7 @@ function Shortner() {
               <option value="Customize">Customize domain</option>
               <option value="Customize">Scissor.com</option>
               <option value="Customize">Enter domain</option>
+              <option value="Customize">Add domain</option>
               Customize domain
               <FontAwesomeIcon
                 icon={faChevronDown}
