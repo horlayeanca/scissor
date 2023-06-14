@@ -10,7 +10,7 @@ function Hero() {
     <div className="bg-gradient-to-b from-yellow-50 to-slate-200 bg-blend-multiply">
       <div className="flex flex-col w-full h-60 px-5 justify-center items-center">
         <div className="h-10">
-          <p className="max-w-4xl text-5xl text-center leading-relaxed font-gilroy-light font-bold">
+          <p className="max-w-4xl text-5xl mx-auto text-center leading-relaxed font-gilroy-light font-bold">
             Optimize Your Online Experience with Our Advanced{" "}
             <span className="text-blue-600 leading-3">URL Shortening </span>{" "}
             Solution
@@ -30,7 +30,7 @@ function Hero() {
               </svg>
             </span>
           </p>
-          <div className="absolute w-4/6">
+          <div className="mx-auto w-4/6">
             <p className="text-center text-lg leading-6 px-20 font-gilroy">
               Personalize your shortened URLs to align with your brand identity.
               Utilize custom slugs, branded links, and domain customization

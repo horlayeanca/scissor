@@ -8,6 +8,10 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 function Login() {
+  const [showPassword, setShowPassword] = React.useState(false);
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">
       <div className="flex justify-center items-center flex-col w-1/2">
@@ -35,20 +39,25 @@ function Login() {
           />{" "}
           <br />
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             name=""
             id=""
             placeholder="Password"
             className="border-2 border-blue-600 rounded-lg w-[500px] py-2 px-4"
           />
-          <FontAwesomeIcon
-            icon={faEyeSlash}
-            className="absolute right-[450px] mt-[82px] cursor-pointer hidden"
-          />
-          <FontAwesomeIcon
-            icon={faEye}
-            className="absolute right-[450px] mt-[82px] cursor-pointer"
-          />
+          {showPassword ? (
+            <FontAwesomeIcon
+              icon={faEyeSlash}
+              className="absolute right-[450px] mt-[82px] cursor-pointer"
+              onClick={togglePassword}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faEye}
+              className="absolute right-[450px] mt-[82px] cursor-pointer"
+              onClick={togglePassword}
+            />
+          )}
           <h2 className="font-gilroy text-right py-2 text-blue-600 hover:text-blue-500">
             <a href="/#">Forgot password ?</a>
           </h2>
