@@ -5,6 +5,7 @@ import { ReactComponent as VectorXX } from "../assets/VectorXX.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -69,9 +70,9 @@ function SignUp() {
         </div>
         <h2 className="font-gilroy py-4 mx-auto font-semibold">
           Already have an account?{" "}
-          <a href="/#" className="text-blue-600">
+          <Link to="/login" className="text-blue-600">
             Log in
-          </a>
+          </Link>
         </h2>
         <h3 className="font-gilroy text-sm text-slate-400 text-center">
           By signing up with an account, you agree to
