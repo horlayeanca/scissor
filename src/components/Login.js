@@ -1,11 +1,11 @@
 import React from "react";
-import { ReactComponent as Apple } from "../assets/Apple.svg";
-import { ReactComponent as Google } from "../assets/Google.svg";
 import { ReactComponent as VectorXX } from "../assets/VectorXX.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { AiFillApple } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -18,10 +18,10 @@ function Login() {
         <h3>Log in with:</h3>
         <div className="flex items-center font-gilroy text-white py-3">
           <button className="bg-blue-600 py-2 px-5 flex items-center rounded">
-            <Google className="w-4 h-4 flex" /> &nbsp; Google
+            <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
           <button className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4">
-            <Apple className="w-4 h-4 flex" />
+            <AiFillApple className="w-4 h-4 flex text-white text-4xl" />
             &nbsp; Apple
           </button>
         </div>
