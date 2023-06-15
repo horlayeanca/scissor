@@ -23,7 +23,7 @@ function Footer() {
       <div className="px-5">
         <div className="grid grid-cols-5 gap-x-10 gap-y-0 px-28 justify-center">
           <div className="row-span-2 px-6">
-            <div className="flex pt-2">
+            <div className="flex pt-2 flex-nowrap">
               <Logo className="flex items-baseline" />{" "}
               <h1 className="font-gilroy-light text-lg font-bold">
                 {" "}
