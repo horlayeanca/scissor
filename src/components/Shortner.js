@@ -8,8 +8,43 @@ import { ReactComponent as VectorVII } from "../assets/VectorVII.svg";
 import { ReactComponent as VectorVIII } from "../assets/VectorVIII.svg";
 import { ReactComponent as VectorIX } from "../assets/VectorIX.svg";
 import { ReactComponent as VectorX } from "../assets/VectorX.svg";
+import axios from "axios";
+import { db } from "./firebase";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 function Shortner() {
+  const [url, setUrl] = React.useState("");
+  const [shortUrl, setShortUrl] = React.useState("");
+
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://api.shrtco.de/v2/shorten?url=${url}`
+      );
+      setShortUrl(data.result.full_short_link);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  const colRef = collection(db, "setShortUrl");
+  getDocs(colRef).then((snapshot) => {
+    snapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+    });
+  });
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    fetchData();
+    addDoc(colRef, {
+      url: url,
+      result: shortUrl,
+    });
+
+    setUrl("");
+  };
+
   return (
     <div className="flex justify-center items-center bg-secondary py-20">
       <VectorVIII className="absolute left-0 -mt-[194px]" />
@@ -22,8 +57,10 @@ function Shortner() {
         <form action="" className="flex flex-col gap-4">
           <input
             type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
             placeholder="Paste URL here..."
-            className="border-2 border-blue-200 rounded-xl w-96 px-4 py-2 font-gilroy focus:outline-blue-400"
+            className="border-2 border-blue-200 rounded-xl w-96 px-4 py-2 font-gilroy text-black focus:outline-blue-400"
           />
           <div className="flex gap-2">
             <select
@@ -46,13 +83,17 @@ function Shortner() {
               className="border-2 border-blue-200 px-3 py-2 rounded-xl font-gilroy focus:outline-blue-400"
             />
           </div>
-          <button className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200">
+          <button
+            onClick={handleClick}
+            className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200"
+          >
             Trim URL &nbsp;{" "}
             <FontAwesomeIcon
               icon={faHandScissors}
               style={{ color: "#f4f5f5" }}
             />
           </button>
+          <p className="text-center font-gilroy font-medium">{shortUrl}</p>
           <p className="font-gilroy text-blue-500 text-sm font-medium text-center ">
             By clicking Trim URL, I agree to the{" "}
             <span className="font-bold text-base text-blue-600">
