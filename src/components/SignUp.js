@@ -6,15 +6,40 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const signupForm = document.querySelector("form");
+
+    const email = signupForm.email.value;
+    const password = signupForm.password.value;
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((cred) => {
+        // Signed in
+        const user = cred.user;
+        alert("User created successfully!", user.cred);
+        signupForm.reset();
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage, errorCode);
+        // ..
+      });
+  };
   return (
     <div className="flex justify-center items-center py-10">
-      <form action="" className="flex flex-col">
+      <form action="" name="form" className="flex flex-col">
         <h3 className="text-center p-3 font-gilroy text-base text-[#5C6F7F]">
           Sign up with:
         </h3>
@@ -39,11 +64,13 @@ function SignUp() {
           />
           <input
             type="email"
+            name="email"
             placeholder="Email address"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
           <input
             type={showPassword ? "text" : "password"}
+            name="password"
             placeholder="Password"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
@@ -79,7 +106,10 @@ function SignUp() {
             />
           )}
 
-          <button className="bg-blue-600 mt-5 py-3 text-sm font-semibold rounded-full font-gilroy text-white hover:bg-blue-500">
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-600 mt-5 py-3 text-sm font-semibold rounded-full font-gilroy text-white hover:bg-blue-500"
+          >
             Sign up with Email
           </button>
         </div>
