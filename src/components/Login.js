@@ -35,29 +35,31 @@ function Login() {
             name=""
             id=""
             placeholder="Email address or username"
-            className="border-2 border-blue-600 rounded-lg w-[500px] py-2 px-4"
+            className="border-2 border-blue-600 rounded-lg md:w-[500px] py-2 px-4"
           />{" "}
           <br />
-          <input
-            type={showPassword ? "text" : "password"}
-            name=""
-            id=""
-            placeholder="Password"
-            className="border-2 border-blue-600 rounded-lg w-[500px] py-2 px-4"
-          />
-          {showPassword ? (
-            <FontAwesomeIcon
-              icon={faEyeSlash}
-              className="absolute right-[450px] mt-[82px] cursor-pointer"
-              onClick={togglePassword}
+          <div className="border-2 border-blue-600 rounded-lg">
+            <input
+              type={showPassword ? "text" : "password"}
+              name=""
+              id=""
+              placeholder="Password"
+              className=" md:w-[450px] py-2 px-4 outline-none border-l-2 rounded-lg"
             />
-          ) : (
-            <FontAwesomeIcon
-              icon={faEye}
-              className="absolute right-[450px] mt-[82px] cursor-pointer"
-              onClick={togglePassword}
-            />
-          )}
+            {showPassword ? (
+              <FontAwesomeIcon
+                icon={faEyeSlash}
+                className="cursor-pointer"
+                onClick={togglePassword}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faEye}
+                className="cursor-pointer"
+                onClick={togglePassword}
+              />
+            )}
+          </div>
           <h2 className="font-gilroy text-right py-2 text-blue-600 hover:text-blue-500">
             <a href="/#">Forgot password ?</a>
           </h2>

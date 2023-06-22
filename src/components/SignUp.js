@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as VectorXX } from "../assets/VectorXX.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -7,11 +7,24 @@ import { Link } from "react-router-dom";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { UserAuth } from "../context/AuthContext";
+import { auth } from "./firebase";
 
 function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const { googleSignIn } = UserAuth();
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn(auth);
+      console.log("Google Sign In Successful");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -26,7 +39,7 @@ function SignUp() {
       .then((cred) => {
         // Signed in
         const user = cred.user;
-        alert("User created successfully!", user.cred);
+        alert("User created successfully!", user);
         signupForm.reset();
         // ...
       })
@@ -44,7 +57,10 @@ function SignUp() {
           Sign up with:
         </h3>
         <div className="flex justify-center">
-          <button className="bg-blue-600 py-2 px-5 font-gilroy text-sm text-white flex items-center rounded">
+          <button
+            onClick={handleGoogleSignIn}
+            className="bg-blue-600 py-2 px-5 font-gilroy text-sm text-white flex items-center rounded"
+          >
             <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
           <button className="bg-blue-600 py-2 px-5 font-gilroy text-sm text-white flex items-center rounded ml-4">
