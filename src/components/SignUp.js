@@ -9,14 +9,16 @@ import { FcGoogle } from "react-icons/fc";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { UserAuth } from "../context/AuthContext";
 import { auth } from "./firebase";
+import { useHistory } from "react-router-dom";
 
 function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+  const history = useHistory();
 
-  const { googleSignIn } = UserAuth();
+  const { googleSignIn, user } = UserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
@@ -26,6 +28,12 @@ function SignUp() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (user !== null) {
+      history.push("/");
+    }
+  }, [user, history]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

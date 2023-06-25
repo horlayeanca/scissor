@@ -3,10 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 function Navigation() {
   const [showMenu, setShowMenu] = React.useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
+  const { user, logOut } = UserAuth();
+
+  const handleLogOut = async (e) => {
+    e.preventDefault();
+    try {
+      await logOut();
+      alert("Logged Out Successfully");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const menuLinks = [
     {
@@ -60,12 +72,21 @@ function Navigation() {
         ))}
       </div>
       <div className="md:flex justify-center items-center gap-3 hidden">
-        <Link
-          to="/login"
-          className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-blue-300"
-        >
-          Log in
-        </Link>
+        {user?.displayName ? (
+          <button
+            onClick={handleLogOut}
+            className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-blue-300"
+          >
+            Log out
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="text-blue-600 text-base font-medium cursor-pointer leading-5 w-20 hover:scale-100 duration-300 hover:text-blue-300"
+          >
+            Log in
+          </Link>
+        )}
         <Link className="flex flex-row justify-center cursor-pointer items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 hover:bg-gradient-to-br from-blue-600 to-green-400 duration-200">
           Try for free
         </Link>

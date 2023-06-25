@@ -6,18 +6,35 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import { UserAuth } from "../context/AuthContext";
+import { auth } from "./firebase";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const { googleSignIn } = UserAuth();
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn(auth);
+      console.log("Google Sign In Successful");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">
       <div className="flex justify-center items-center flex-col w-1/2">
         <h3>Log in with:</h3>
         <div className="flex items-center font-gilroy text-white py-3">
-          <button className="bg-blue-600 py-2 px-5 flex items-center rounded">
+          <button
+            onClick={handleGoogleSignIn}
+            className="bg-blue-600 py-2 px-5 flex items-center rounded"
+          >
             <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
           <button className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4">
