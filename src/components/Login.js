@@ -8,6 +8,8 @@ import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { UserAuth } from "../context/AuthContext";
 import { auth } from "./firebase";
+import { useHistory } from "react-router-dom";
+import { useEffect } from "react";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -15,16 +17,22 @@ function Login() {
     setShowPassword(!showPassword);
   };
 
-  const { googleSignIn } = UserAuth();
+  const { googleSignIn, user } = UserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
       await googleSignIn(auth);
-      console.log("Google Sign In Successful");
+      alert("Google Sign In Successful");
     } catch (error) {
       console.log(error);
     }
   };
+  const history = useHistory();
+  useEffect(() => {
+    if (user !== null) {
+      history.push("/");
+    }
+  }, [user, history]);
 
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">

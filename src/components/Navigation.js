@@ -14,7 +14,6 @@ function Navigation() {
     e.preventDefault();
     try {
       await logOut();
-      alert("Logged Out Successfully");
     } catch (error) {
       console.log(error);
     }

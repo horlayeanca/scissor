@@ -18,7 +18,13 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    signOut(auth);
+    signOut(auth)
+      .then(() => {
+        alert("sign-out successful");
+      })
+      .catch((error) => {
+        alert(error);
+      });
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
