@@ -95,45 +95,49 @@ function SignUp() {
             placeholder="Email address"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            id="password"
-            placeholder="Password"
-            className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
-          />
-          {showPassword ? (
-            <FontAwesomeIcon
-              icon={faEyeSlash}
-              className="absolute right-[450px] mt-[195px] cursor-pointer"
-              onClick={togglePassword}
+          <div className="border-2 border-blue-600 rounded-lg">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              id="password"
+              placeholder="Password"
+              className="py-2 px-4 rounded-lg focus:outline-none md:w-[450px]"
             />
-          ) : (
-            <FontAwesomeIcon
-              icon={faEye}
-              className="absolute right-[450px] mt-[195px] cursor-pointer"
-              onClick={togglePassword}
+            {showPassword ? (
+              <FontAwesomeIcon
+                icon={faEyeSlash}
+                className="cursor-pointer"
+                onClick={togglePassword}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faEye}
+                className="cursor-pointer"
+                onClick={togglePassword}
+              />
+            )}
+          </div>
+          <div className="border-2 border-blue-600 rounded-lg">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Confirm password"
+              id="confirmPassword"
+              className="py-2 px-4 rounded-lg focus:outline-none md:w-[450px]"
             />
-          )}
-          <input
-            type={showPassword ? "text" : "password"}
-            placeholder="Confirm password"
-            id="confirmPassword"
-            className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
-          />
-          {showPassword ? (
-            <FontAwesomeIcon
-              icon={faEyeSlash}
-              className="absolute right-[450px] mt-[136px] cursor-pointer"
-              onClick={togglePassword}
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={faEye}
-              className="absolute right-[450px] mt-[136px] cursor-pointer"
-              onClick={togglePassword}
-            />
-          )}
+            {showPassword ? (
+              <FontAwesomeIcon
+                icon={faEyeSlash}
+                className="cursor-pointer"
+                onClick={togglePassword}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faEye}
+                className="cursor-pointer"
+                onClick={togglePassword}
+              />
+            )}
+          </div>
 
           <button
             onClick={handleSubmit}

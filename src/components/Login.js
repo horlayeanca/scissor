@@ -63,48 +63,48 @@ function Login() {
         <div className="flex items-center font-gilroy text-white py-3">
           <button
             onClick={handleGoogleSignIn}
-            className="bg-blue-600 py-2 px-5 flex items-center rounded"
+            className="bg-blue-600 py-2 px-5 flex items-center rounded flex-nowrap"
           >
             <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
-          <button className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4">
+          <button className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4 flex-nowrap">
             <AiFillApple className="w-4 h-4 flex text-white text-4xl" />
             &nbsp; Apple
           </button>
         </div>
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center w-full justify-center sm:w-2/3">
           <VectorXX /> <h2>&nbsp; Or &nbsp;</h2>
           <VectorXX />
         </div>
-        <form action="" name="form" className="flex flex-col py-2">
+        <form action="" name="form" className="flex flex-col py-2 sm:w-2/3">
           <input
             type="email"
             name="email"
             id="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address or username"
-            className="border-2 border-blue-600 rounded-lg md:w-[500px] py-2 px-4"
+            className="border-2 border-blue-600 rounded-lg w-full py-2 px-4"
           />{" "}
           <br />
-          <div className="border-2 border-blue-600 rounded-lg">
+          <div className="border-2 border-blue-600 rounded-lg w-full flex justify-between items-center">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className=" md:w-[450px] py-2 px-4 outline-none border-l-2 rounded-lg"
+              className="py-2 px-4 outline-none border-l-2 rounded-lg"
             />
             {showPassword ? (
               <FontAwesomeIcon
                 icon={faEyeSlash}
-                className="cursor-pointer"
+                className="cursor-pointer pr-3"
                 onClick={togglePassword}
               />
             ) : (
               <FontAwesomeIcon
                 icon={faEye}
-                className="cursor-pointer"
+                className="cursor-pointer pr-3"
                 onClick={togglePassword}
               />
             )}
