@@ -1,6 +1,4 @@
 import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandScissors } from "@fortawesome/free-solid-svg-icons";
 import { ReactComponent as VectorIV } from "../assets/VectorIV.svg";
