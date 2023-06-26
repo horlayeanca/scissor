@@ -1,4 +1,5 @@
 import React from "react";
+import { IoIosArrowDown } from "react-icons/io";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandScissors } from "@fortawesome/free-solid-svg-icons";
@@ -29,9 +30,7 @@ function Shortner() {
 
   const colRef = collection(db, "setShortUrl");
   getDocs(colRef).then((snapshot) => {
-    snapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-    });
+    snapshot.forEach((doc) => {});
   });
 
   const handleClick = (e) => {
@@ -72,10 +71,6 @@ function Shortner() {
               <option value="Customize">Enter domain</option>
               <option value="Customize">Add domain</option>
               Customize domain
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                style={{ color: "#3284ff" }}
-              />
             </select>
             <input
               type="text"

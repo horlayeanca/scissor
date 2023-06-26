@@ -6,7 +6,7 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { UserAuth } from "../context/AuthContext";
 import { auth } from "./firebase";
 import { useHistory } from "react-router-dom";
@@ -32,6 +32,8 @@ function SignUp() {
   useEffect(() => {
     if (user !== null) {
       history.push("/");
+    } else {
+      history.push("/signup");
     }
   }, [user, history]);
 
@@ -42,7 +44,6 @@ function SignUp() {
     const email = signupForm.email.value;
     const password = signupForm.password.value;
 
-    const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((cred) => {
         // Signed in
@@ -60,7 +61,7 @@ function SignUp() {
   };
   return (
     <div className="flex justify-center items-center py-10">
-      <form action="" name="form" className="flex flex-col">
+      <form action="" name="form" id="form" className="flex flex-col">
         <h3 className="text-center p-3 font-gilroy text-base text-[#5C6F7F]">
           Sign up with:
         </h3>
@@ -83,18 +84,21 @@ function SignUp() {
         <div className="grid gap-4">
           <input
             type="text"
+            id="username"
             placeholder="Username"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
           <input
             type="email"
             name="email"
+            id="email"
             placeholder="Email address"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
           <input
             type={showPassword ? "text" : "password"}
             name="password"
+            id="password"
             placeholder="Password"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
@@ -114,6 +118,7 @@ function SignUp() {
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Confirm password"
+            id="confirmPassword"
             className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
           />
           {showPassword ? (

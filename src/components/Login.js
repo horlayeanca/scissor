@@ -10,12 +10,15 @@ import { UserAuth } from "../context/AuthContext";
 import { auth } from "./firebase";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const { googleSignIn, user } = UserAuth();
   const handleGoogleSignIn = async (e) => {
@@ -24,9 +27,28 @@ function Login() {
       await googleSignIn(auth);
       alert("Google Sign In Successful");
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
+
+  const handleLogin = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        alert("User logged in successfully!", user);
+        // ...
+        if (!user) {
+          history.push("/login");
+          alert("User not found");
+        }
+      })
+      .catch((error) => {
+        alert(error.code);
+        alert(error.message);
+      });
+  };
+
   const history = useHistory();
   useEffect(() => {
     if (user !== null) {
@@ -54,11 +76,12 @@ function Login() {
           <VectorXX /> <h2>&nbsp; Or &nbsp;</h2>
           <VectorXX />
         </div>
-        <form action="" className="flex flex-col py-2">
+        <form action="" name="form" className="flex flex-col py-2">
           <input
             type="email"
-            name=""
-            id=""
+            name="email"
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address or username"
             className="border-2 border-blue-600 rounded-lg md:w-[500px] py-2 px-4"
           />{" "}
@@ -66,8 +89,9 @@ function Login() {
           <div className="border-2 border-blue-600 rounded-lg">
             <input
               type={showPassword ? "text" : "password"}
-              name=""
-              id=""
+              name="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               className=" md:w-[450px] py-2 px-4 outline-none border-l-2 rounded-lg"
             />
@@ -88,7 +112,10 @@ function Login() {
           <h2 className="font-gilroy text-right py-2 text-blue-600 hover:text-blue-500">
             <a href="/#">Forgot password ?</a>
           </h2>
-          <button className="bg-blue-600 py-3 text-sm font-semibold rounded-full font-gilroy text-white hover:bg-blue-500">
+          <button
+            onClick={handleLogin}
+            className="bg-blue-600 py-3 text-sm font-semibold rounded-full font-gilroy text-white hover:bg-blue-500"
+          >
             Log in
           </button>
           <h2 className="font-gilroy py-4 mx-auto font-semibold">

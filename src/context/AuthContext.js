@@ -4,6 +4,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../components/firebase";
 
