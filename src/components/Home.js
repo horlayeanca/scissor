@@ -12,8 +12,9 @@ function Home() {
     <div>
       <Navigation />
       <Hero />
-      <Features />
-      {/*   <Pricing />
+
+      {/*  <Features />
+       <Pricing />
       <Shortner />
       <Faq />
   <GetStarted /> */}
