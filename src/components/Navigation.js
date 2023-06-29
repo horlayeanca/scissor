@@ -42,7 +42,7 @@ function Navigation() {
     },
   ];
   return (
-    <div className="flex justify-between items-center w-full h-20 px-20 gap-9 bg-yellow-50 bg-blend-lighten fixed">
+    <div className="flex justify-between items-center w-full h-20 px-20 bg-yellow-50 bg-blend-lighten fixed">
       <Link to="/" className="">
         <h1 className="text-2xl flex justify-between items-center text-blue-600 font-bold cursor-pointer font-gilroy">
           <svg
@@ -60,7 +60,7 @@ function Navigation() {
           | scissor
         </h1>
       </Link>
-      <div className="hidden md:flex">
+      <div className="hidden md:flex justify-between">
         {menuLinks.map(({ id, link }) => (
           <li
             key={id}
@@ -103,7 +103,7 @@ function Navigation() {
       </div>
 
       {showMenu && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-full text-black">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-inherit text-black">
           {menuLinks.map(({ id, link }) => (
             <li
               key={id}
@@ -113,11 +113,11 @@ function Navigation() {
               <Link to={link}>{link}</Link>
             </li>
           ))}
-          <div className="flex flex-col justify-center items-center gap-3 mt-4 bg-white w-full">
+          <div className="flex flex-col justify-center items-center gap-3 mt-4 w-full">
             {showMenu && (
               <a
                 href="/login"
-                className="text-blue-600 text-base font-medium leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400"
+                className="text-blue-600 text-base font-bold leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400"
               >
                 Log in
               </a>

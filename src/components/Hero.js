@@ -7,16 +7,16 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="bg-gradient-to-b from-yellow-50 to-slate-200 bg-blend-multiply">
-      <div className="flex flex-col w-full h-60 px-5 justify-center items-center">
-        <div className="h-10">
-          <p className="max-w-4xl text-5xl mx-auto text-center leading-relaxed font-gilroy-light font-bold">
+    <div className="bg-gradient-to-b w-full from-yellow-50 to-slate-200 bg-blend-multiply">
+      <div className="flex flex-col h-60 px-5 mb-10 justify-center items-center">
+        <div className="h-10 w-2/3">
+          <p className="text-xl w-full md:max-w-4xl sm:text-3xl lg:text-5xl mx-auto text-center leading-relaxed font-gilroy-light font-bold">
             Optimize Your Online Experience with Our Advanced{" "}
             <span className="text-blue-600 leading-3">URL Shortening </span>{" "}
             Solution
             <span className="text-blue-600">
               <svg
-                width="174"
+                width="160"
                 height="21"
                 viewBox="0 0 174 21"
                 fill="none"
@@ -30,8 +30,8 @@ function Hero() {
               </svg>
             </span>
           </p>
-          <div className="mx-auto w-4/6">
-            <p className="text-center text-lg leading-6 px-20 font-gilroy">
+          <div className="mx-auto w-full py-3 flex md:w-4/6">
+            <p className="text-center text-base md:text-lg w-full leading-6 sm:px-10 font-gilroy">
               Personalize your shortened URLs to align with your brand identity.
               Utilize custom slugs, branded links, and domain customization
               option to reinforce your brand presence and enhance user
@@ -40,7 +40,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center pt-36 gap-8">
+      <div className="flex justify-center items-center mt-32 gap-8">
         <Link
           to="/signup"
           className="bg-blue-600 py-3 px-8 rounded-full font-gilroy text-white cursor-pointer hover:bg-blue-500 duration-200"
@@ -51,13 +51,13 @@ function Hero() {
           Learn more..
         </button>
       </div>
-      <div className="flex w-4/6 m-auto my-6 py-3 pl-8">
-        <Vector className="relative left-16 h-60" />
-        <Frame className="flex items-center pt-3 absolute left-1/3" />
+      <div className="flex w-4/6 md:w-full mx-auto my-6 py-3 pl-8">
+        <Vector className="relative left-16 h-60 hidden md:block lg:left-[240px]" />
+        <Frame className="flex items-center pt-3 md:absolute left-1/3 justify-center" />
       </div>
-      <div className="flex w-full">
+      <div className="hidden sm:flex w-full">
         <Rectangle className="w-full h-24" />
-        <Ellipse className="absolute flex justify-center items-center ml-48 mt-6" />
+        <Ellipse className="absolute justify-center items-center w-full mt-4" />
       </div>
     </div>
   );

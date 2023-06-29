@@ -13,10 +13,10 @@ function Home() {
       <Navigation />
       <Hero />
       <Features />
-      <Pricing />
+      {/*   <Pricing />
       <Shortner />
       <Faq />
-      <GetStarted />
+  <GetStarted /> */}
     </div>
   );
 }
