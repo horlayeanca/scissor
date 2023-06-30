@@ -10,7 +10,10 @@ function Features() {
   return (
     <div className="">
       <div className="bg-white">
-        <div className="flex md:flex-row justify-center items-center py-16">
+        <div
+          className="flex md:flex-row justify-center items-center py-16 px-5
+        ml-5 sm:ml-0"
+        >
           <div>
             <div className="px-6">
               <h1 className="font-gilroy-light text-4xl font-semibold">
