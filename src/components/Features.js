@@ -16,7 +16,7 @@ function Features() {
         >
           <div>
             <div className="px-6">
-              <h1 className="font-gilroy-light text-4xl font-semibold">
+              <h1 className="font-gilroy-light text-lg md:text-4xl font-semibold">
                 One Stop. <br /> Four{" "}
                 <span className="text-blue-600">Possibilites.</span>
               </h1>
@@ -50,7 +50,7 @@ function Features() {
       </div>
       <div className="grid md:grid-cols-3 py-24 px-6 md:px-40 gap-12">
         <div className="row-span-2">
-          <h1 className="text-3xl font-gil font-semibold flex">
+          <h1 className="text-lg md:text-3xl font-gil font-semibold flex items-center">
             <Line className="inline-block" />
             &nbsp; Why choose
             <span className="text-blue-600"> &nbsp; Scissor</span>

@@ -7,7 +7,7 @@ function Pricing() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center w-full md:w-3/6 mx-auto px-8 py-12">
-        <h1 className="text-4xl font-gilroy-light font-semibold text-justify">
+        <h1 className="text-lg md:text-4xl font-gilroy-light font-semibold text-justify">
           <Line className="inline-block" size="lg" /> A{" "}
           <span className="text-blue-600">price perfect</span> for your needs.
         </h1>
@@ -19,7 +19,9 @@ function Pricing() {
       <div className="flex flex-col gap-3 md:gap-0 md:flex-row mx-3 justify-center items-center">
         <div className="border-2 border-blue-200 rounded-xl md:rounded-e-none md:border-r-0 md:rounded-s-xl px-6 md:px-16 py-8 font-gilroy">
           <h2 className="text-2xl font-medium pb-3">Basic</h2>
-          <h1 className="text-4xl font-semibold py-2 font-gil">Free</h1>
+          <h1 className="text-2xl md:text-4xl font-semibold py-2 font-gil">
+            Free
+          </h1>
           <p className="text-xl font-medium py-1">Free plan for all users</p>
           <ul className="text-sm font-medium py-2 leading-7">
             <li>
@@ -66,7 +68,9 @@ function Pricing() {
         </div>
         <div className="rounded-xl px-6 md:px-16 py-24 font-gilroy bg-gradient-to-b from-secondary to-secondary text-white">
           <h2 className="text-2xl font-medium pb-3">Profssional</h2>
-          <h1 className="text-4xl py-2 font-gil font-semibold">$15/month</h1>
+          <h1 className="text-2xl md:text-4xl py-2 font-gil font-semibold">
+            $15/month
+          </h1>
           <p className="text-xl font-medium py-1">
             Ideal for business creators
           </p>
@@ -120,7 +124,9 @@ function Pricing() {
         </div>
         <div className="border-2 border-blue-200 rounded-xl md:rounded-none md:border-l-0 md:rounded-e-xl w-auto px-6 md:px-16 py-8 font-gilroy">
           <h2 className="text-2xl font-medium pb-3">Teams</h2>
-          <h1 className="text-4xl font-semibold py-2 font-gil">$25/month</h1>
+          <h1 className="text-2xl md:text-4xl font-semibold py-2 font-gil">
+            $25/month
+          </h1>
           <p className="text-xl font-medium py-1">Share with up to 10 users</p>
           <ul className="text-sm font-medium py-2 leading-7">
             <li>
