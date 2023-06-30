@@ -6,8 +6,8 @@ import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 function Pricing() {
   return (
     <div>
-      <div className="flex flex-col justify-center items-center w-3/6 mx-auto px-8 py-12">
-        <h1 className="text-4xl font-gilroy-light font-semibold">
+      <div className="flex flex-col justify-center items-center w-full md:w-3/6 mx-auto px-8 py-12">
+        <h1 className="text-4xl font-gilroy-light font-semibold text-justify">
           <Line className="inline-block" size="lg" /> A{" "}
           <span className="text-blue-600">price perfect</span> for your needs.
         </h1>
@@ -16,8 +16,8 @@ function Pricing() {
           can be rest assured we have you in mind in our pricing.
         </p>
       </div>
-      <div className="flex flex-row justify-center items-center">
-        <div className="border-2 border-blue-200 border-r-0 rounded-s-xl px-16 py-8 font-gilroy">
+      <div className="flex flex-col gap-3 md:gap-0 md:flex-row mx-3 justify-center items-center">
+        <div className="border-2 border-blue-200 rounded-xl md:rounded-e-none md:border-r-0 md:rounded-s-xl px-6 md:px-16 py-8 font-gilroy">
           <h2 className="text-2xl font-medium pb-3">Basic</h2>
           <h1 className="text-4xl font-semibold py-2 font-gil">Free</h1>
           <p className="text-xl font-medium py-1">Free plan for all users</p>
@@ -64,7 +64,7 @@ function Pricing() {
             </li>
           </ul>
         </div>
-        <div className="rounded-xl px-16 py-24 font-gilroy bg-gradient-to-b from-secondary to-secondary text-white">
+        <div className="rounded-xl px-6 md:px-16 py-24 font-gilroy bg-gradient-to-b from-secondary to-secondary text-white">
           <h2 className="text-2xl font-medium pb-3">Profssional</h2>
           <h1 className="text-4xl py-2 font-gil font-semibold">$15/month</h1>
           <p className="text-xl font-medium py-1">
@@ -118,7 +118,7 @@ function Pricing() {
             </li>
           </ul>
         </div>
-        <div className="border-2 border-blue-200 border-l-0 rounded-e-xl w-auto px-16 py-8 font-gilroy">
+        <div className="border-2 border-blue-200 rounded-xl md:rounded-none md:border-l-0 md:rounded-e-xl w-auto px-6 md:px-16 py-8 font-gilroy">
           <h2 className="text-2xl font-medium pb-3">Teams</h2>
           <h1 className="text-4xl font-semibold py-2 font-gil">$25/month</h1>
           <p className="text-xl font-medium py-1">Share with up to 10 users</p>
@@ -166,11 +166,11 @@ function Pricing() {
           </ul>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-3 pb-8">
-        <button className="text-blue-600 bg-white border-2 border-blue-300 font-gilroy font-bold text-sm px-10 py-2 rounded-full mt-16 hover:bg-blue-600 duration-200 hover:text-white">
+      <div className="flex justify-center items-center gap-3 pb-8 w-full">
+        <button className="text-blue-600 bg-white border-2 border-blue-300 font-gilroy font-bold text-sm px-5 md:px-10 py-2 rounded-full mt-16 hover:bg-blue-600 duration-200 hover:text-white">
           Get Custom Pricing
         </button>
-        <button className="bg-blue-600 border-2 border-blue-600 text-white font-gilroy font-bold text-sm px-10 py-2 rounded-full mt-16 hover:bg-blue-500 duration-200 hover:text-white">
+        <button className="bg-blue-600 border-2 border-blue-600 text-white font-gilroy font-bold text-sm px-5 md:px-10 py-2 rounded-full mt-16 hover:bg-blue-500 duration-200 hover:text-white">
           Select Pricing
         </button>
       </div>
