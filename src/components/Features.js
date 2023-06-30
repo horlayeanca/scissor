@@ -10,7 +10,7 @@ function Features() {
   return (
     <div className="">
       <div className="bg-white">
-        <div className="flex flex-row justify-center items-center py-16">
+        <div className="flex md:flex-row justify-center items-center py-16">
           <div>
             <div className="px-6">
               <h1 className="font-gilroy-light text-4xl font-semibold">
@@ -19,7 +19,7 @@ function Features() {
               </h1>
             </div>
           </div>
-          <div className="flex flex-row gap-12 px-10">
+          <div className="flex flex-col md:flex-row gap-12 px-10">
             <div>
               <h1 className="text-3xl font-gilroy-light font-semibold">3M</h1>
               <p className="font-semibld font-gilroy">Active users</p>
@@ -45,11 +45,12 @@ function Features() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 py-24 px-48 gap-12">
+      <div className="grid md:grid-cols-3 py-24 px-6 md:px-40 gap-12">
         <div className="row-span-2">
-          <h1 className="text-3xl font-gil font-semibold flex justify-between">
+          <h1 className="text-3xl font-gil font-semibold flex">
             <Line className="inline-block" />
-            Why choose <span className="text-blue-600">Scissor</span>
+            &nbsp; Why choose
+            <span className="text-blue-600"> &nbsp; Scissor</span>
           </h1>
           <p className="font-gilroy text-base font-medium">
             Scissor is the hub of everything that has to do with your link

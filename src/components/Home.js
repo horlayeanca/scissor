@@ -12,8 +12,8 @@ function Home() {
     <div>
       <Navigation />
       <Hero />
-
-      {/*  <Features />
+      <Features />
+      {/*  
        <Pricing />
       <Shortner />
       <Faq />
