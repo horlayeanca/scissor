@@ -11,7 +11,7 @@ function Features() {
     <div className="">
       <div className="bg-white">
         <div
-          className="flex md:flex-row justify-center items-center py-16 px-5
+          className="flex flex-col md:flex-row justify-center items-center py-16 px-5
         ml-5 sm:ml-0"
         >
           <div>
@@ -22,7 +22,7 @@ function Features() {
               </h1>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-12 px-10">
+          <div className="md:flex pt-5 grid grid-cols-2 md:flex-row gap-12 px-10">
             <div>
               <h1 className="text-3xl font-gilroy-light font-semibold">3M</h1>
               <p className="font-semibld font-gilroy">Active users</p>
