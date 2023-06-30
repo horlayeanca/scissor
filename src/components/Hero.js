@@ -9,7 +9,7 @@ function Hero() {
   return (
     <div className="bg-gradient-to-b w-full from-yellow-50 to-slate-200 bg-blend-multiply">
       <div className="flex flex-col h-60 px-3 mb-10 justify-center items-center">
-        <div className="mt-[325px] w-2/3">
+        <div className="mt-[325px] w-3/4">
           <p className="text-lg w-full md:max-w-4xl sm:text-3xl lg:text-5xl mx-auto text-center leading-relaxed font-gilroy-light font-bold">
             Optimize Your Online Experience with Our Advanced{" "}
             <span className="text-blue-600 leading-3">URL Shortening </span>{" "}
