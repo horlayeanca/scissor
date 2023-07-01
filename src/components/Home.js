@@ -14,9 +14,10 @@ function Home() {
       <Hero />
       <Features />
       <Pricing />
+      <Shortner />
       {/*  
        
-      <Shortner />
+ 
       <Faq />
   <GetStarted /> */}
     </div>
