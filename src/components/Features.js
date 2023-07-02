@@ -24,23 +24,29 @@ function Features() {
           </div>
           <div className="md:flex pt-5 grid grid-cols-2 md:flex-row gap-12 px-10">
             <div>
-              <h1 className="text-3xl font-gilroy-light font-semibold">3M</h1>
+              <h1 className="md:text-3xl text-xl font-gilroy-light font-semibold">
+                3M
+              </h1>
               <p className="font-semibld font-gilroy">Active users</p>
             </div>
             <div className="">
-              <h1 className="text-3xl font-gilroy-light font-semibold">60M</h1>
+              <h1 className="md:text-3xl text-xl font-gilroy-light font-semibold">
+                60M
+              </h1>
               <p className="font-semibld font-gilroy">
                 Links & QR <br /> codes created
               </p>
             </div>
             <div className="">
-              <h1 className="text-3xl font-gilroy-light font-semibold">1B</h1>
+              <h1 className="md:text-3xl text-xl font-gilroy-light font-semibold">
+                1B
+              </h1>
               <p className="font-semibld font-gilroy">
                 Clicked & Scanned <br /> connections
               </p>
             </div>
             <div className="">
-              <h1 className="text-3xl font-gilroy-light font-semibold px-4">
+              <h1 className="md:text-3xl text-xl font-gilroy-light font-semibold px-4">
                 300K
               </h1>
               <p className="font-light font-gilroy px-4">App Integrations</p>
@@ -51,7 +57,7 @@ function Features() {
       <div className="grid md:grid-cols-3 py-24 px-6 md:px-40 gap-12">
         <div className="row-span-2">
           <h1 className="text-lg md:text-3xl font-gil font-semibold flex items-center">
-            <Line className="inline-block" />
+            <Line className="inline-block h-7 md:h-11" />
             &nbsp; Why choose
             <span className="text-blue-600"> &nbsp; Scissor</span>
           </h1>
@@ -71,7 +77,7 @@ function Features() {
               className="text-slate-800"
             />
           </div>
-          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
             URL Shortening
           </h1>
           <p className="font-gilroy font-semibold text-base">
@@ -83,7 +89,7 @@ function Features() {
           <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
             <FontAwesomeIcon icon={faPenToSquare} />
           </div>
-          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
             Custom URLs
           </h1>
           <p className="font-gilroy font-semibold text-base">
@@ -95,7 +101,7 @@ function Features() {
           <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
             <FontAwesomeIcon icon={faQrcode} />
           </div>
-          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
             QR Codes
           </h1>
           <p className="font-gilroy font-semibold text-base">
@@ -108,7 +114,7 @@ function Features() {
           <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
             <FontAwesomeIcon icon={faChartLine} />
           </div>
-          <h1 className="font-gilroy font-semibold text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
             Data Analytics
           </h1>
           <p className="font-gilroy font-semibold text-base">

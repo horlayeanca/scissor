@@ -44,13 +44,13 @@ function Shortner() {
 
   return (
     <div className="flex justify-center items-center bg-secondary py-20 px-8">
-      <VectorVIII className="absolute left-0 -mt-[194px] hidden md:flex" />
-      <VectorIX className="absolute left-0 -mt-[230px] hidden md:flex" />
-      <VectorX className="absolute left-0 -mt-[273px] hidden md:flex" />
+      <VectorVIII className="absolute left-0 -mt-[194px] hidden lg:flex" />
+      <VectorIX className="absolute left-0 -mt-[230px] hidden lg:flex" />
+      <VectorX className="absolute left-0 -mt-[273px] hidden lg:flex" />
       <VectorIV className="absolute right-0 mt-[152px] hidden md:flex" />
       <VectorV className="absolute right-0 mt-[134px] hidden md:flex" />
       <VectorVII className="absolute right-0 mt-[80px] hidden md:flex" />
-      <div className="border-2 rounded-xl flex flex-col justify-center items-center px-6 py-11 gap-5 w-full md:w-2/4 bg-white">
+      <div className="border-2 rounded-xl flex flex-col justify-center items-center px-6 py-11 gap-5 w-full md:w-1/3 bg-white">
         <form action="" className="flex flex-col gap-4 w-full">
           <input
             type="text"
@@ -62,7 +62,7 @@ function Shortner() {
           <div className="flex flex-col md:flex-row gap-2 justify-center">
             <select
               type="select"
-              className="border-2 border-blue-200 px-4 py-2 rounded-xl font-gilroy text-sm text-blue-400 focus:outline-blue-400"
+              className="border-2 border-blue-200 px-4 py-2 rounded-xl md:w-full font-gilroy text-sm text-blue-400 focus:outline-blue-400"
             >
               <option value="Customize">Customize domain</option>
               <option value="scissor.co">Scissor.com</option>
@@ -73,7 +73,7 @@ function Shortner() {
             <input
               type="text"
               placeholder="Type Alias here"
-              className="border-2 border-blue-200 px-3 py-2 rounded-xl font-gilroy focus:outline-blue-400"
+              className="border-2 border-blue-200 px-3 py-2 rounded-xl md:w-full font-gilroy focus:outline-blue-400"
             />
           </div>
           <button

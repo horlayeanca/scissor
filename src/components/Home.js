@@ -15,10 +15,11 @@ function Home() {
       <Features />
       <Pricing />
       <Shortner />
+
+      <Faq />
       {/*  
        
  
-      <Faq />
   <GetStarted /> */}
     </div>
   );

@@ -76,12 +76,12 @@ function Faq() {
       <VectorII className="absolute hidden md:block -left-6" />
       <VectorIII className="absolute hidden md:block -left-3" />
       <div className="flex justify-center items-center py-10">
-        <h1 className="text-4xl font-gilroy-light font-semibold">
-          <Line className="inline-block" />
+        <h1 className="md:text-4xl text-2xl font-gilroy-light font-semibold">
+          <Line className="inline-block h-8 md:h-11" />
           &nbsp;FAQs
         </h1>
       </div>
-      <ul className="flex flex-col justify-center items-left py-4 px-10 gap-8 mx-auto w-2/3">
+      <ul className="flex flex-col justify-center items-left py-4 px-10 gap-8 mx-auto w-full md:w-2/3">
         {faqs.map((faq, index) => (
           <ListItem key={index} {...faq} />
         ))}
