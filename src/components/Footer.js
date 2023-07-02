@@ -14,23 +14,23 @@ import { AiFillFacebook } from "react-icons/ai";
 function Footer() {
   return (
     <div className="pt-20 pb-10">
-      <VectorXIV className="absolute left-0 mt-[205px]" />
-      <VectorXV className="absolute left-0 mt-[130px]" />
-      <VectorXVI className="absolute left-0 mt-[20px]" />
-      <VectorXVII className="absolute right-0 mt-[265px]" />
-      <VectorXVIII className="absolute right-0 mt-[240px]" />
-      <VectorXIX className="absolute right-0 mt-[186px]" />
-      <div className="px-5">
-        <div className="grid grid-cols-5 gap-x-10 gap-y-0 px-28 justify-center">
-          <div className="row-span-2 px-6">
+      <VectorXIV className="hidden md:flex absolute left-0 mt-[205px]" />
+      <VectorXV className="hidden md:flex absolute left-0 mt-[130px]" />
+      <VectorXVI className="hidden md:flex absolute left-0 mt-[20px]" />
+      <VectorXVII className="hidden md:flex absolute right-0 mt-[265px]" />
+      <VectorXVIII className="hidden md:flex absolute right-0 mt-[240px]" />
+      <VectorXIX className="hidden md:flex absolute right-0 mt-[186px]" />
+      <div className="md:px-5">
+        <div className="grid md:grid-cols-5 grid-cols-3 gap-x-2 px-3 md:gap-x-10 gap-y-0 md:px-28 justify-center">
+          <div className="row-span-2">
             <div className="flex pt-2 flex-nowrap">
-              <Logo className="flex items-baseline" />{" "}
-              <h1 className="font-gilroy-light text-lg font-bold">
+              <Logo className="flex " />{" "}
+              <h1 className="font-gilroy-light text-sm md:text-lg font-bold">
                 {" "}
                 &nbsp;| SCISSOR
               </h1>
             </div>
-            <div className="flex justify-between py-5">
+            <div className="flex px-2 py-5">
               <BsTwitter className="text-[#000000] text-2xl" />
               <FiInstagram className="text-2xl" />
               <AiFillLinkedin className="text-2xl" />
@@ -121,7 +121,7 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="text-right pr-20">
+        <div className="md:text-right text-center pr-0 md:pr-20">
           <h3 className="font-gilroy text-base font-medium">
             Term of Service | Security | Scissor 2023
           </h3>
