@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Footer from "./components/Footer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
@@ -16,7 +15,6 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SignUp} />
           </Switch>
-          {/*<Footer />*/}
         </div>
       </Router>
     </AuthContextProvider>

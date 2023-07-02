@@ -6,6 +6,7 @@ import Pricing from "./Pricing";
 import GetStarted from "./GetStarted";
 import Shortner from "./Shortner";
 import Faq from "./Faq";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -15,12 +16,9 @@ function Home() {
       <Features />
       <Pricing />
       <Shortner />
-
       <Faq />
-      {/*  
-       
- 
-  <GetStarted /> */}
+      <GetStarted />
+      <Footer />
     </div>
   );
 }

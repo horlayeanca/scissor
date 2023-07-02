@@ -22,9 +22,9 @@ function GetStarted() {
           </button>
           <div className="static">
             {" "}
-            <VectorXI className="absolute right-1 -mt-20" />
-            <VectorXII className="absolute right-2 -mt-7" />
-            <VectorXIII className="absolute mt-7 right-1" />
+            <VectorXI className="hidden md:flex absolute right-1 -mt-20" />
+            <VectorXII className="hidden md:flex absolute right-2 -mt-7" />
+            <VectorXIII className="hidden md:flex absolute mt-7 right-1" />
           </div>
         </div>
       </div>
