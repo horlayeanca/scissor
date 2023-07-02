@@ -76,7 +76,7 @@ function Faq() {
       <VectorII className="absolute hidden md:block -left-6" />
       <VectorIII className="absolute hidden md:block -left-3" />
       <div className="flex justify-center items-center py-10">
-        <h1 className="md:text-4xl text-2xl font-gilroy-light font-semibold">
+        <h1 className="md:text-4xl text-lg font-gilroy-light font-semibold">
           <Line className="inline-block h-8 md:h-11" />
           &nbsp;FAQs
         </h1>

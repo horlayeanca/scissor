@@ -13,7 +13,7 @@ function ListItem(faq) {
       <div className="flex justify-between items-left flex-col leading-9 border-b-2">
         <h2
           onClick={toggleDisplay}
-          className="text-xl font-gilroy font-bold leading-9 flex justify-between cursor-pointer pb-2"
+          className="text-lg md:text-xl font-gilroy font-bold leading-9 flex justify-between cursor-pointer pb-2"
         >
           {faq.question}
           {display && faq.id ? (
