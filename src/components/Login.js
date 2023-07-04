@@ -20,6 +20,8 @@ function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
+  // sign in with google
+
   const { googleSignIn, user } = UserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
@@ -31,17 +33,19 @@ function Login() {
     }
   };
 
+  // sign in with email and password
+
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
-        alert("User logged in successfully!", user);
-        // ...
-        if (!user) {
-          history.push("/login");
-          alert("User not found");
+        if (userCredential) {
+          alert("User logged in successfully!");
+        } else {
+          alert("User not logged in!");
+          console.log("User not logged in!");
         }
+        console.log(userCredential);
       })
       .catch((error) => {
         alert(error.code);
@@ -53,6 +57,8 @@ function Login() {
   useEffect(() => {
     if (user !== null) {
       history.push("/");
+    } else {
+      history.push("/login");
     }
   }, [user, history]);
 
@@ -84,6 +90,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address or username"
             className="border-2 border-blue-600 rounded-lg w-full py-2 px-4"
+            required
           />{" "}
           <br />
           <div className="border-2 border-blue-600 rounded-lg w-full flex justify-between items-center">
@@ -94,6 +101,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               className="py-2 px-4 outline-none border-l-2 rounded-lg"
+              required
             />
             {showPassword ? (
               <FontAwesomeIcon

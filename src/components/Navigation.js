@@ -115,12 +115,12 @@ function Navigation() {
           ))}
           <div className="flex flex-col justify-center items-center gap-3 mt-4 w-full">
             {showMenu && (
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 className="text-blue-600 text-base font-bold leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400"
               >
                 Log in
-              </a>
+              </Link>
             )}
             {showMenu && (
               <button className="flex flex-row justify-center items-center py-3 px-6 bg-blue-600 rounded-full text-white w-36 h-11 hover:scale-100 duration-300 hover:text-blue-600 hover:bg-red-400">

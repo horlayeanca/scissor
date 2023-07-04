@@ -93,6 +93,7 @@ function SignUp() {
               id="username"
               placeholder="Username"
               className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
+              required
             />
             <input
               type="email"
@@ -100,6 +101,7 @@ function SignUp() {
               id="email"
               placeholder="Email address"
               className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
+              required
             />
             <div className="border-2 border-blue-600 rounded-lg w-full flex justify-between items-center">
               <input
@@ -108,6 +110,7 @@ function SignUp() {
                 id="password"
                 placeholder="Password"
                 className="py-2 px-4 outline-none border-l-2 rounded-lg"
+                required
               />
               {showPassword ? (
                 <FontAwesomeIcon
@@ -129,6 +132,7 @@ function SignUp() {
                 placeholder="Confirm password"
                 id="confirmPassword"
                 className="py-2 px-4 outline-none border-l-2 rounded-lg"
+                required
               />
               {showPassword ? (
                 <FontAwesomeIcon
