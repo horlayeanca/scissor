@@ -38,20 +38,20 @@ function Footer() {
             </div>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">
               Why Scissor ?
             </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <ul className="font-gilroy text-sm font-normal">
               <li>Scissor 101</li>
               <li>Integrations & API</li>
               <li>Pricing</li>
             </ul>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">
               Solutions
             </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <ul className="font-gilroy text-sm font-normal">
               <li>Social Media</li>
               <li>Digital Marketing</li>
               <li>Customer Service</li>
@@ -59,20 +59,20 @@ function Footer() {
             </ul>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">
               Products
             </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <ul className="font-gilroy text-sm font-normal">
               <li>Link Management</li>
               <li>QR Codes</li>
               <li>Link-in-bio</li>
             </ul>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">
               Company
             </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <ul className="font-gilroy text-sm font-normal">
               <li>About Scissor</li>
               <li>Careers</li>
               <li>Patners</li>
@@ -82,10 +82,10 @@ function Footer() {
             </ul>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">
               Resources
             </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <ul className="font-gilroy text-sm font-normal">
               <li>Blog</li>
               <li>Resource Library</li>
               <li>Developers</li>
@@ -97,10 +97,10 @@ function Footer() {
             </ul>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">
               Features
             </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <ul className="font-gilroy text-sm font-normal">
               <li>Branded Links</li>
               <li>Mobile Links</li>
               <li>Campaign</li>
@@ -109,10 +109,8 @@ function Footer() {
             </ul>
           </div>
           <div className="">
-            <h3 className="font-gilroy-light text-base font-bold py-3">
-              Legal
-            </h3>
-            <ul className="font-gilroy text-base font-normal">
+            <h3 className="font-gilroy-light text-sm font-bold py-3">Legal</h3>
+            <ul className="font-gilroy text-sm font-normal">
               <li>Privacy Policy</li>
               <li>Cookie Policy</li>
               <li>Terms of Service</li>

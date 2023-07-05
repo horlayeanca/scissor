@@ -77,7 +77,7 @@ function Features() {
               className="text-slate-800"
             />
           </div>
-          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy-light font-semibold text-lg md:text-3xl pt-5 pb-2">
             URL Shortening
           </h1>
           <p className="font-gilroy font-semibold text-base">
@@ -89,7 +89,7 @@ function Features() {
           <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
             <FontAwesomeIcon icon={faPenToSquare} />
           </div>
-          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy-light font-semibold text-lg md:text-3xl pt-5 pb-2">
             Custom URLs
           </h1>
           <p className="font-gilroy font-semibold text-base">
@@ -101,7 +101,7 @@ function Features() {
           <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
             <FontAwesomeIcon icon={faQrcode} />
           </div>
-          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy-light font-semibold text-lg md:text-3xl pt-5 pb-2">
             QR Codes
           </h1>
           <p className="font-gilroy font-semibold text-base">
@@ -114,7 +114,7 @@ function Features() {
           <div className="bg-blue-100 w-12 h-12 rounded-full flex justify-center items-center">
             <FontAwesomeIcon icon={faChartLine} />
           </div>
-          <h1 className="font-gilroy font-semibold text-xl md:text-3xl pt-5 pb-2">
+          <h1 className="font-gilroy-light font-semibold text-xl md:text-3xl pt-5 pb-2">
             Data Analytics
           </h1>
           <p className="font-gilroy font-semibold text-base">
