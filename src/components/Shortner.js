@@ -28,7 +28,9 @@ function Shortner() {
 
   const colRef = collection(db, "setShortUrl");
   getDocs(colRef).then((snapshot) => {
-    snapshot.forEach((doc) => {});
+    snapshot.forEach((doc) => {
+      doc.data();
+    });
   });
 
   const handleClick = (e) => {
@@ -38,7 +40,7 @@ function Shortner() {
       url: url,
       result: shortUrl,
       count: 0,
-      date: Date.now(),
+      date: new Date(),
     });
 
     setUrl("");
