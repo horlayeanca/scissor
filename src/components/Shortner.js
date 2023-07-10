@@ -37,6 +37,8 @@ function Shortner() {
     addDoc(colRef, {
       url: url,
       result: shortUrl,
+      count: 0,
+      date: Date.now(),
     });
 
     setUrl("");
