@@ -43,6 +43,7 @@ function Login() {
           alert("User logged in successfully!");
         } else {
           alert("User not logged in!");
+          console.log("User not logged in!");
         }
         console.log(userCredential);
       })
@@ -63,16 +64,16 @@ function Login() {
 
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">
-      <div className="flex justify-center items-center flex-col w-2/3">
+      <div className="flex justify-center items-center flex-col w-1/2">
         <h3>Log in with:</h3>
         <div className="flex items-center font-gilroy text-white py-3">
           <button
             onClick={handleGoogleSignIn}
-            className="bg-blue-600 py-2 px-5 text-sm flex items-center rounded flex-nowrap"
+            className="bg-blue-600 py-2 px-5 flex items-center rounded flex-nowrap"
           >
             <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
-          <button className="bg-blue-600 py-2 px-5 text-sm flex items-center rounded ml-4 flex-nowrap">
+          <button className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4 flex-nowrap">
             <AiFillApple className="w-4 h-4 flex text-white text-4xl" />
             &nbsp; Apple
           </button>

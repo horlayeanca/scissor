@@ -117,7 +117,7 @@ function Navigation() {
             {showMenu && (
               <Link
                 to="/login"
-                className="text-blue-600 text-base text-center pb-2 font-bold leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400"
+                className="text-blue-600 text-base font-bold leading-5 w-20 hover:scale-100 duration-300 hover:text-red-400"
               >
                 Log in
               </Link>
