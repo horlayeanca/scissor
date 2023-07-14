@@ -40,7 +40,7 @@ function Shortner() {
       url: url,
       result: shortUrl,
       count: 0,
-      date: Date(),
+      date: new Date().toDateString(),
     });
 
     setUrl("");

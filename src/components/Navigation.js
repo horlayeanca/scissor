@@ -22,7 +22,7 @@ function Navigation() {
   const menuLinks = [
     {
       id: 1,
-      link: "My URLs",
+      link: "Urls",
     },
     {
       id: 2,
