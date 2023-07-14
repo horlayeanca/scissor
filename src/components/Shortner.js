@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandScissors } from "@fortawesome/free-solid-svg-icons";
 import { ReactComponent as VectorIV } from "../assets/VectorIV.svg";
@@ -12,8 +13,8 @@ import { db } from "./firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
 function Shortner() {
-  const [url, setUrl] = React.useState("");
-  const [shortUrl, setShortUrl] = React.useState("");
+  const [url, setUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
 
   const fetchData = async () => {
     try {
@@ -84,10 +85,7 @@ function Shortner() {
               className="border-2 border-blue-200 px-3 py-2 rounded-xl md:w-full font-gilroy focus:outline-blue-400"
             />
           </div>
-          <button
-            onClick={handleClick}
-            className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200"
-          >
+          <button className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200">
             Trim URL &nbsp;{" "}
             <FontAwesomeIcon
               icon={faHandScissors}
