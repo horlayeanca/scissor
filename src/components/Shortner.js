@@ -40,7 +40,7 @@ function Shortner() {
       url: url,
       result: shortUrl,
       count: 0,
-      date: new Date(),
+      date: Date(),
     });
 
     setUrl("");
@@ -55,7 +55,11 @@ function Shortner() {
       <VectorV className="absolute right-0 mt-[134px] hidden md:flex" />
       <VectorVII className="absolute right-0 mt-[80px] hidden md:flex" />
       <div className="border-2 rounded-xl flex flex-col justify-center items-center px-6 py-11 gap-5 w-full md:w-1/3 bg-white">
-        <form action="" className="flex flex-col gap-4 w-full">
+        <form
+          action=""
+          className="flex flex-col gap-4 w-full"
+          onSubmit={handleClick}
+        >
           <input
             type="text"
             value={url}
