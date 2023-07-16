@@ -4,6 +4,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import { Link as Links } from "react-scroll";
 
 function Navigation() {
   const [showMenu, setShowMenu] = React.useState(false);
@@ -64,9 +65,11 @@ function Navigation() {
         {menuLinks.map(({ id, link }) => (
           <li
             key={id}
-            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600`}
+            className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600 cursor-pointer`}
           >
-            <Link to={link}>{link}</Link>
+            <Links to={link} smooth={true} offset={-40} duration={300}>
+              {link}
+            </Links>
           </li>
         ))}
       </div>
@@ -110,7 +113,14 @@ function Navigation() {
               onClick={toggleMenu}
               className="px-4 cursor-pointer list-none capitalize font-medium py-5 text-xl text-black"
             >
-              <Link to={link}>{link}</Link>
+              <Links
+                onClick={() => setShowMenu(!showMenu)}
+                to={link}
+                smooth={true}
+                offset={-50}
+              >
+                {link}
+              </Links>
             </li>
           ))}
           <div className="flex flex-col justify-center items-center gap-3 mt-4 w-full">

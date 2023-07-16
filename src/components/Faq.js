@@ -71,7 +71,7 @@ function Faq() {
   ];
 
   return (
-    <div>
+    <div name="FAQs">
       <VectorI className="absolute hidden md:block -left-5" />
       <VectorII className="absolute hidden md:block -left-6" />
       <VectorIII className="absolute hidden md:block -left-3" />

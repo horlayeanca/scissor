@@ -8,7 +8,7 @@ import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 function Features() {
   return (
-    <div className="">
+    <div name="Features" className="">
       <div className="bg-white">
         <div
           className="flex flex-col md:flex-row justify-center items-center py-16 px-5

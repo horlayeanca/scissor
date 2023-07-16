@@ -39,16 +39,18 @@ function Shortner() {
     fetchData();
     addDoc(colRef, {
       url: url,
-      result: shortUrl,
+      short_link: shortUrl,
       count: 0,
       date: new Date().toDateString(),
     });
-
     setUrl("");
   };
 
   return (
-    <div className="flex justify-center items-center bg-secondary py-20 px-8">
+    <div
+      name="Shortner"
+      className="flex justify-center items-center bg-secondary py-20 px-8"
+    >
       <VectorVIII className="absolute left-0 -mt-[194px] hidden lg:flex" />
       <VectorIX className="absolute left-0 -mt-[230px] hidden lg:flex" />
       <VectorX className="absolute left-0 -mt-[273px] hidden lg:flex" />
@@ -85,7 +87,10 @@ function Shortner() {
               className="border-2 border-blue-200 px-3 py-2 rounded-xl md:w-full font-gilroy focus:outline-blue-400"
             />
           </div>
-          <button className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200">
+          <button
+            onClick={handleClick}
+            className="bg-blue-600 py-2 w-full rounded-full text-white font-gilroy font-semibold text-sm hover:bg-blue-500 duration-200"
+          >
             Trim URL &nbsp;{" "}
             <FontAwesomeIcon
               icon={faHandScissors}

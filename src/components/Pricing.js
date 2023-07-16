@@ -5,7 +5,7 @@ import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 
 function Pricing() {
   return (
-    <div>
+    <div name="Pricing">
       <div className="flex flex-col justify-center items-center w-full md:w-3/6 mx-auto px-8 py-12">
         <h1 className="text-lg md:text-4xl font-gilroy-light font-semibold text-justify">
           <Line className="inline-block h-7 md:h-11" /> A{" "}
