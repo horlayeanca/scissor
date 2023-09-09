@@ -8,7 +8,7 @@ import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { UserAuth } from "../context/AuthContext";
 import { auth } from "./firebase";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -22,12 +22,12 @@ function Login() {
 
   // sign in with google
 
-  const { googleSignIn, user } = UserAuth();
+  const { googleSignIn, currentUser } = UserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
       await googleSignIn(auth);
-      alert("Google Sign In Successful");
+      console.log(currentUser);
     } catch (error) {
       alert(error);
     }
@@ -45,7 +45,7 @@ function Login() {
           alert("User not logged in!");
           console.log("User not logged in!");
         }
-        console.log(userCredential);
+        console.log(currentUser);
       })
       .catch((error) => {
         alert(error.code);
@@ -53,14 +53,14 @@ function Login() {
       });
   };
 
-  const history = useHistory();
+  const navigate = useNavigate();
   useEffect(() => {
-    if (user !== null) {
-      history.push("/");
+    if (currentUser) {
+      navigate("/dashboard");
     } else {
-      history.push("/login");
+      navigate("/login");
     }
-  }, [user, history]);
+  }, [currentUser, navigate]);
 
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">
@@ -73,7 +73,10 @@ function Login() {
           >
             <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
-          <button className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4 flex-nowrap">
+          <button
+            className="bg-blue-600 py-2 px-5 flex items-center rounded ml-4 flex-nowrap"
+            disabled
+          >
             <AiFillApple className="w-4 h-4 flex text-white text-4xl" />
             &nbsp; Apple
           </button>

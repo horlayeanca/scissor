@@ -8,44 +8,17 @@ import { ReactComponent as VectorVII } from "../assets/VectorVII.svg";
 import { ReactComponent as VectorVIII } from "../assets/VectorVIII.svg";
 import { ReactComponent as VectorIX } from "../assets/VectorIX.svg";
 import { ReactComponent as VectorX } from "../assets/VectorX.svg";
-import axios from "axios";
-import { db } from "./firebase";
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 function Shortner() {
   const [url, setUrl] = useState("");
-  const [shortUrl, setShortUrl] = useState("");
 
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get(
-        `https://api.shrtco.de/v2/shorten?url=${url}`
-      );
-      setShortUrl(data.result.full_short_link);
-    } catch (error) {
-      alert(error);
-    }
-  };
-
-  const colRef = collection(db, "setShortUrl");
-  getDocs(colRef).then((snapshot) => {
-    snapshot.forEach((doc) => {
-      doc.data();
-    });
-  });
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.preventDefault();
-    fetchData();
-    addDoc(colRef, {
-      url: url,
-      short_link: shortUrl,
-      count: 0,
-      date: new Date().toDateString(),
-    });
-    setUrl("");
+    navigate("/login");
   };
-
   return (
     <div
       name="Shortner"
@@ -97,7 +70,7 @@ function Shortner() {
               style={{ color: "#f4f5f5" }}
             />
           </button>
-          <p className="text-center font-gilroy font-medium">{shortUrl}</p>
+          <p className="text-center font-gilroy font-medium"></p>
           <p className="font-gilroy text-blue-500 text-sm font-medium text-center ">
             By clicking Trim URL, I agree to the{" "}
             <span className="font-bold text-base text-blue-600">

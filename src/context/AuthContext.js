@@ -4,10 +4,14 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../components/firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../components/firebase";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
@@ -15,6 +19,32 @@ export const AuthContextProvider = ({ children }) => {
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
+    const ref = doc(db, "users", user.uid);
+    setDoc(ref, {
+      name: user.displayName,
+      email: user.email,
+      photo: user.photoURL,
+      password: user.password,
+    });
+    // .then(() => {})
+  };
+
+  const signUp = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        if (userCredential) {
+          alert("User logged in successfully!");
+        } else {
+          alert("User not logged in!");
+
+          console.log("User not logged in!");
+        }
+      })
+      .catch((error) => {
+        alert(error.code);
+        alert(error.message);
+      });
   };
 
   const logOut = () => {
@@ -26,17 +56,18 @@ export const AuthContextProvider = ({ children }) => {
         alert(error);
       });
   };
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      console.log("User", currentUser);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        console.log(user.uid);
+      } else console.log("No user");
     });
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  }, [user]);
+
   return (
-    <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+    <AuthContext.Provider value={{ googleSignIn, logOut, user, signUp }}>
       {children}
     </AuthContext.Provider>
   );

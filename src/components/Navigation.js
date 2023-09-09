@@ -4,12 +4,12 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
-import { Link as Links } from "react-scroll";
+// import { Link } from "react-scroll";
 
 function Navigation() {
   const [showMenu, setShowMenu] = React.useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
-  const { user, logOut } = UserAuth();
+  const { currentUser, logOut } = UserAuth();
 
   const handleLogOut = async (e) => {
     e.preventDefault();
@@ -67,14 +67,12 @@ function Navigation() {
             key={id}
             className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600 cursor-pointer`}
           >
-            <Links to={link} smooth={true} offset={-40} duration={300}>
-              {link}
-            </Links>
+            <Link to={link}>{link}</Link>
           </li>
         ))}
       </div>
       <div className="md:flex justify-center items-center gap-3 hidden">
-        {user?.displayName ? (
+        {currentUser?.displayName ? (
           <button
             onClick={handleLogOut}
             id="logout"
@@ -113,14 +111,9 @@ function Navigation() {
               onClick={toggleMenu}
               className="px-4 cursor-pointer list-none capitalize font-medium py-5 text-xl text-black"
             >
-              <Links
-                onClick={() => setShowMenu(!showMenu)}
-                to={link}
-                smooth={true}
-                offset={-50}
-              >
+              <Link onClick={() => setShowMenu(!showMenu)} to={link}>
                 {link}
-              </Links>
+              </Link>
             </li>
           ))}
           <div className="flex flex-col justify-center items-center gap-3 mt-4 w-full">

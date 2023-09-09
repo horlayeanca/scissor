@@ -5,7 +5,7 @@ import { ReactComponent as VectorX } from "../assets/VectorX.svg";
 import { ReactComponent as VectorXI } from "../assets/VectorXI.svg";
 import { ReactComponent as VectorXII } from "../assets/VectorXII.svg";
 import { ReactComponent as VectorXIII } from "../assets/VectorXIII.svg";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 
 function GetStarted() {
   return (
@@ -22,7 +22,6 @@ function GetStarted() {
             <Link to="/signup">Get Started</Link>
           </button>
           <div className="static">
-            {" "}
             <VectorXI className="hidden md:flex absolute right-1 -mt-20" />
             <VectorXII className="hidden md:flex absolute right-2 -mt-7" />
             <VectorXIII className="hidden md:flex absolute mt-7 right-1" />

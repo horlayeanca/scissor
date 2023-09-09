@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ReactComponent as VectorXX } from "../assets/VectorXX.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -6,19 +6,22 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { UserAuth } from "../context/AuthContext";
 import { auth } from "./firebase";
-import { useHistory } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../components/firebase";
 
 function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
-  const history = useHistory();
 
-  const { googleSignIn, user } = UserAuth();
+  const { googleSignIn, signUp } = UserAuth();
   const handleGoogleSignIn = async (e) => {
     e.preventDefault();
     try {
@@ -29,35 +32,35 @@ function SignUp() {
     }
   };
 
-  useEffect(() => {
-    if (user !== null) {
-      history.push("/");
-    } else {
-      history.push("/signup");
-    }
-  }, [user, history]);
+  const [user, setUser] = React.useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const { username, email, password, confirmPassword } = user;
 
-  const handleSubmit = (e) => {
+  const handleUser = (e) => {
     e.preventDefault();
-    const signupForm = document.querySelector("form");
+    const { name, value } = e.target;
+    setUser((perState) => ({ ...perState, [name]: value }));
+  };
 
-    const email = signupForm.email.value;
-    const password = signupForm.password.value;
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((cred) => {
-        // Signed in
-        const user = cred.user;
-        alert("User created successfully!", user);
-        signupForm.reset();
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage, errorCode);
-        // ..
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      await signUp(auth, email, password);
+      const ref = doc(db, "users", user.uid);
+      setDoc(ref, {
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+        password: user.password,
       });
+    } catch (error) {
+      alert(error.code);
+      alert(error.message);
+    }
   };
   return (
     <div className="w-full h-[714px] bg-[#ffffff] flex justify-center">
@@ -72,7 +75,10 @@ function SignUp() {
           >
             <FcGoogle className="w-4 h-4 flex text-2xl" /> &nbsp; Google
           </button>
-          <button className="bg-blue-600 py-2 px-5 font-gilroy text-sm text-white flex items-center rounded flex-nowrap ml-4">
+          <button
+            className="bg-blue-600 py-2 px-5 font-gilroy text-sm text-white flex items-center rounded flex-nowrap ml-4"
+            disabled
+          >
             <AiFillApple className="w-4 h-4 flex text-white text-4xl" />
             &nbsp; Apple
           </button>
@@ -90,6 +96,8 @@ function SignUp() {
           <div className="flex flex-col gap-4 justify-center">
             <input
               type="text"
+              onChange={handleUser}
+              name={username}
               id="username"
               placeholder="Username"
               className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
@@ -98,6 +106,7 @@ function SignUp() {
             <input
               type="email"
               name="email"
+              onChange={handleUser}
               id="email"
               placeholder="Email address"
               className="border-2 border-blue-600 py-2 px-4 rounded-lg focus:outline-none"
@@ -106,7 +115,7 @@ function SignUp() {
             <div className="border-2 border-blue-600 rounded-lg w-full flex justify-between items-center">
               <input
                 type={showPassword ? "text" : "password"}
-                name="password"
+                name={password}
                 id="password"
                 placeholder="Password"
                 className="py-2 px-4 outline-none border-l-2 rounded-lg"
@@ -150,11 +159,12 @@ function SignUp() {
             </div>
           </div>
           <button
-            onClick={handleSubmit}
+            onClick={handleSignUp}
             className="bg-blue-600 mt-5 py-3 text-sm font-semibold rounded-full font-gilroy text-white hover:bg-blue-500"
           >
             Sign up with Email
           </button>
+          <div className="flex flex-row justify-center items-center gap-2"></div>
 
           <h2 className="font-gilroy py-4 mx-auto font-semibold">
             Already have an account?{" "}
