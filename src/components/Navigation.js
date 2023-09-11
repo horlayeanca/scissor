@@ -36,6 +36,7 @@ function Navigation() {
     {
       id: 4,
       link: "Analytics",
+      to: "dashboard",
     },
     {
       id: 5,
@@ -62,12 +63,12 @@ function Navigation() {
         </h1>
       </Link>
       <div className="hidden md:flex justify-between">
-        {menuLinks.map(({ id, link }) => (
+        {menuLinks.map(({ id, link, to }) => (
           <li
             key={id}
             className={`px-4 list-none capitalize font-gilroy-light font-light text-lg text-black hover:scale-100 duration-300 hover:text-blue-600 cursor-pointer`}
           >
-            <Link to={link}>{link}</Link>
+            <Link to={to}>{link}</Link>
           </li>
         ))}
       </div>
