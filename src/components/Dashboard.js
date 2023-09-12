@@ -5,9 +5,12 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import { AuthContext } from "../context/AuthContext";
-import { db } from "./firebase";
+import { AiFillSetting, AiTwotoneHome } from "react-icons/ai";
+import { MdOutlineCreate, MdOutlineDeleteSweep } from "react-icons/md";
+import { TbDeviceAnalytics } from "react-icons/tb";
+import { RiLogoutBoxFill } from "react-icons/ri";
 
-function Dashboard() {
+function Dashboard({ urls, isLoading }) {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -28,52 +31,62 @@ function Dashboard() {
     {
       id: 1,
       name: "Home",
-      link: "/dashboard/urls",
+      link: "/dashboard",
+      icon: <AiTwotoneHome />,
     },
     {
       id: 2,
       name: "Create URL",
       link: "/dashboard/create",
+      icon: <MdOutlineCreate />,
     },
     {
       id: 3,
       name: "Analytics",
       link: "/dashboard/analytics",
+      icon: <TbDeviceAnalytics />,
     },
     {
       id: 4,
       name: "Delete URL",
       link: "/dashboard/delete",
+      icon: <MdOutlineDeleteSweep />,
     },
     {
       id: 5,
       name: "Settings",
       link: "/settings",
+      icon: <AiFillSetting />,
     },
   ];
   return (
     <div>
       <div className="w-full flex justify-between">
         <div className="md:hidden"></div>
-        <div className="hidden md:inline w-1/4 bg-blue-600 h-screen text-white">
+        <div className="hidden md:inline w-2/5 bg-blue-600 h-screen text-white">
           <h1 className="text-center text-xl font-gilroy-light font-semibold pt-8">
             Scissor
           </h1>
 
           <div>
             <ul className="pt-20 leading-10 mx-2">
-              {menuLinks.map(({ id, name, link }) => (
+              {menuLinks.map(({ id, name, link, icon }) => (
                 <li
                   key={id}
                   className="text-lg leading-10 hover:bg-blue-500 px-5 rounded-lg"
                 >
-                  <Link to={link}>{name}</Link>
+                  <Link to={link} className="flex items-center">
+                    <span className="p-2">{icon}</span> {name}
+                  </Link>
                 </li>
               ))}
               <button
-                className="text-lg text-left leading-10 hover:bg-blue-500 px-5 rounded-lg w-full"
+                className="text-lg text-left leading-10 hover:bg-blue-500 px-5 rounded-lg w-full flex items-center "
                 onClick={handleLogOut}
               >
+                <span className="px-1">
+                  <RiLogoutBoxFill />
+                </span>
                 Logout
               </button>
             </ul>

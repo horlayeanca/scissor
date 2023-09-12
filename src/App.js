@@ -10,11 +10,12 @@ import Analytics from "./components/Analytics";
 // import { UserAuth } from "./context/AuthContext";
 import CreateUrl from "./components/CreateUrl";
 import DeleteUrl from "./components/DeleteUrl";
-import Urls from "./components/Urls";
+import useFetch from "./components/useFetch";
 import ErrorPage from "./components/ErrorPage";
 // import Urls from "./components/Urls";
 
 function App() {
+  const { data: urls, isLoading } = useFetch;
   return (
     <AuthContextProvider>
       <Router>
@@ -26,11 +27,14 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
 
-            <Route path="dashboard" element={<Dashboard />}>
-              <Route path="analytics" element={<Analytics />} />
+            <Route
+              path="dashboard"
+              element={<Dashboard urls={urls} isLoading={isLoading} />}
+            >
+              <Route path="analytics" element={<Analytics urls={urls} />} />
               <Route path="create" element={<CreateUrl />} />
               <Route path="delete" element={<DeleteUrl />} />
-              <Route path="urls" element={<Urls />} />
+              {/* <Route path="urls" element={<Urls />} /> */}
             </Route>
             <Route path="*" element={<ErrorPage />} />
           </Routes>
